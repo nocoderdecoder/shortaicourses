@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { COURSES, getLesson } from '@/lib/courses'
+import { LessonBody } from '@/app/components/LessonBody'
 
 type Props = { params: Promise<{ slug: string; lesson: string }> }
 
@@ -83,10 +84,7 @@ export default async function LessonPage({ params }: Props) {
         </div>
 
         {/* Lesson content */}
-        <div
-          className="lesson-body"
-          dangerouslySetInnerHTML={{ __html: lesson.body }}
-        />
+        <LessonBody html={lesson.body} />
 
         {/* Navigation */}
         <nav style={{

@@ -94,6 +94,52 @@ body {
   font-family: ui-monospace, monospace;
 }
 
+/* Block-level prompt templates */
+.prompt-block {
+  position: relative;
+  background: #F3F4F6;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 16px 44px;
+  margin: 1.5rem 0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .prompt-block {
+    background: #1e2130;
+  }
+}
+:root[data-theme="dark"] .prompt-block {
+  background: #1e2130;
+}
+.prompt-text {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre-wrap;
+  font-family: inherit;
+}
+.prompt-copy {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, color 0.15s;
+}
+.prompt-copy:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
 /* Utilities */
 .card-lift {
   transition: transform 0.18s ease, box-shadow 0.18s ease;
