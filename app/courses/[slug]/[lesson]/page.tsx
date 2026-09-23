@@ -14,9 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, lesson: lessonSlug } = await params
   const found = getLesson(slug, lessonSlug)
   if (!found) return {}
+  const { lesson, course } = found
   return {
-    title: `${found.lesson.title} — ${found.course.title}`,
-    description: found.lesson.summary,
+    title: `${lesson.title} — ${course.title}`,
+    description: `${lesson.summary} Part of the free "${course.title}" course. No signup required.`,
   }
 }
 
@@ -31,6 +32,31 @@ export default async function LessonPage({ params }: Props) {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr min(700px, 100%) 1fr', minHeight: '80vh' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'EducationalArticle',
+              name: lesson.title,
+              description: lesson.summary,
+              author: { '@type': 'Person', name: 'Anshul Gupta' },
+              educationalLevel: course.level,
+              isPartOf: { '@type': 'Course', name: course.title },
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Courses', item: 'https://shortaicourses.com/courses' },
+                { '@type': 'ListItem', position: 2, name: course.title, item: `https://shortaicourses.com/courses/${slug}` },
+                { '@type': 'ListItem', position: 3, name: lesson.title, item: `https://shortaicourses.com/courses/${slug}/${lessonSlug}` },
+              ],
+            },
+          ]),
+        }}
+      />
       <div /> {/* left gutter */}
       <article style={{ padding: '48px 24px 80px' }}>
 

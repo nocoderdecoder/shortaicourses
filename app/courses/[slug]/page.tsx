@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = getCourse(slug)
   if (!course) return {}
   return {
-    title: course.title,
-    description: course.description,
+    title: `${course.title}: Free ${course.level} Course for Business Professionals`,
+    description: `${course.description} Free, no signup required. Finish in ${course.totalDuration}.`,
   }
 }
 
@@ -25,6 +25,39 @@ export default async function CoursePage({ params }: Props) {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Course',
+              name: course.title,
+              description: course.description,
+              provider: {
+                '@type': 'Person',
+                name: 'Anshul Gupta',
+                url: 'https://anshul.ai',
+              },
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+                availability: 'https://schema.org/InStock',
+              },
+              educationalLevel: course.level,
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Courses', item: 'https://shortaicourses.com/courses' },
+                { '@type': 'ListItem', position: 2, name: course.title, item: `https://shortaicourses.com/courses/${slug}` },
+              ],
+            },
+          ]),
+        }}
+      />
       {/* Breadcrumb */}
       <nav style={{ marginBottom: '28px' }}>
         <a href="/courses" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>

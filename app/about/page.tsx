@@ -1,13 +1,28 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'Short AI Courses — free AI education for business professionals, by Anshul Gupta.',
+  title: 'About — Anshul Gupta, GTM Strategy at Google',
+  description: 'Anshul Gupta is a GTM strategist at Google and Kellogg MBA who built Short AI Courses to give business professionals practical AI education that fits in a lunch break.',
 }
 
 export default function AboutPage() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Anshul Gupta',
+            jobTitle: 'GTM Strategy',
+            worksFor: { '@type': 'Organization', name: 'Google' },
+            alumniOf: { '@type': 'CollegeOrUniversity', name: 'Kellogg School of Management' },
+            url: 'https://anshul.ai',
+            sameAs: ['https://www.linkedin.com/in/anshul-gupta1/', 'https://anshul.ai'],
+          }),
+        }}
+      />
       <nav style={{ marginBottom: '32px' }}>
         <a href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</a>
       </nav>
@@ -17,7 +32,7 @@ export default function AboutPage() {
       </p>
 
       <h1 style={{ fontSize: '32px', fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)', marginBottom: '28px', lineHeight: 1.2 }}>
-        AI education that respects your time.
+        Free AI courses for business professionals, by Anshul Gupta.
       </h1>
 
       <div style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-muted)' }}>

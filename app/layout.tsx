@@ -10,14 +10,17 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Short AI Courses — Practical AI for Business Professionals',
+    default: 'Short AI Courses — Free Practical AI for Business Professionals',
     template: '%s | Short AI Courses',
   },
-  description: 'Free, short AI courses for business professionals. Finish a course in your lunch break. No jargon, no coding required.',
+  description: 'Free, short AI courses for business professionals. Finish a full course in your lunch break. No jargon, no coding required. No signup needed.',
   metadataBase: new URL('https://shortaicourses.com'),
   openGraph: {
     siteName: 'Short AI Courses',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 }
 

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { COURSES } from '@/lib/courses'
 
 export const metadata: Metadata = {
-  title: 'All Courses',
-  description: 'Browse all free AI courses for business professionals. Short, practical, and jargon-free.',
+  title: 'Free AI Courses for Business Professionals',
+  description: 'Browse free AI courses built for business professionals. Finish each in under 40 minutes. No coding, no jargon, no signup required.',
 }
 
 const LEVEL_COLOR: Record<string, string> = {
