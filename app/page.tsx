@@ -1,4 +1,5 @@
 import { COURSES } from '@/lib/courses'
+import { EmailForm } from './components/EmailForm'
 
 const STATS = [
   { value: '4', label: 'Free courses' },
@@ -171,41 +172,7 @@ export default function Home() {
         <p style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '24px', lineHeight: 1.6 }}>
           Get notified when new courses drop. One email per course, no spam.
         </p>
-        <form style={{ display: 'flex', gap: '8px', maxWidth: '400px', margin: '0 auto' }}>
-          <input
-            type="email"
-            placeholder="your@email.com"
-            required
-            style={{
-              flex: 1,
-              padding: '10px 14px',
-              borderRadius: '7px',
-              border: '1px solid var(--border)',
-              background: 'var(--bg)',
-              color: 'var(--text)',
-              fontSize: '14px',
-              outline: 'none',
-              fontFamily: 'inherit',
-            }}
-          />
-          <button
-            type="submit"
-            style={{
-              padding: '10px 20px',
-              background: 'var(--accent)',
-              color: '#fff',
-              borderRadius: '7px',
-              border: 'none',
-              fontWeight: 600,
-              fontSize: '14px',
-              cursor: 'pointer',
-              fontFamily: 'inherit',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Notify me
-          </button>
-        </form>
+        <EmailForm />
       </section>
     </>
   )
