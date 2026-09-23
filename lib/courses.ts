@@ -380,6 +380,213 @@ export const COURSES: Course[] = [
     ],
   },
   {
+    slug: 'chatgpt-for-work',
+    title: 'ChatGPT for Work',
+    tagline: 'Go from occasional user to someone who gets real work done with it every day.',
+    description: 'A practical, task-by-task guide to using ChatGPT for the work you actually do: writing, research, analysis, communication, and thinking. No fluff, no theory — just the patterns that consistently produce good output.',
+    totalDuration: '36 min',
+    lessonCount: 4,
+    level: 'Beginner',
+    category: 'Tools',
+    lessons: [
+      {
+        slug: 'setting-up-chatgpt-for-your-work',
+        title: 'Setting Up ChatGPT for Your Work',
+        duration: '8 min',
+        summary: 'Custom instructions, memory, and the settings most people never touch.',
+        body: `
+<h2>Why setup matters</h2>
+<p>Most people open ChatGPT, type something, and get a generic response. The professionals who consistently get useful output have spent 20 minutes configuring it to know who they are and how they work. You do this once, and every conversation benefits.</p>
+
+<h2>Custom instructions</h2>
+<p>Custom instructions are a persistent system prompt that applies to every conversation. Go to Settings &gt; Personalization &gt; Custom instructions. There are two fields:</p>
+<p><strong>"What would you like ChatGPT to know about you?"</strong> — Put your role, your industry, your audience, and what you actually do. Example: "I'm a VP of Marketing at a 200-person B2B SaaS company. My audience is mid-market CFOs and IT buyers. I manage a team of 6 and report to the CEO."</p>
+<p><strong>"How would you like ChatGPT to respond?"</strong> — Put your style preferences. Example: "Be direct and concise. No bullet points unless I ask for them. No filler phrases. If you're uncertain, say so. Recommend an approach rather than listing options."</p>
+<p>This alone makes ChatGPT dramatically more useful for your specific situation.</p>
+
+<h2>Memory</h2>
+<p>ChatGPT can remember things across conversations. Go to Settings &gt; Personalization &gt; Memory and turn it on. Then in any conversation, you can say "remember that I prefer..." or "remember that my company does X." Check what it has saved periodically under Settings &gt; Manage memory — it sometimes saves things you did not intend.</p>
+
+<h2>GPT-4o vs the default</h2>
+<p>The free plan uses a capped version of the model. The paid plan (ChatGPT Plus, $20/month) gives you full GPT-4o access, DALL-E image generation, code execution, and web search. For professional use, the paid plan pays for itself on the first day.</p>
+
+<h2>Projects</h2>
+<p>ChatGPT Projects let you create persistent contexts: a project for a specific client, a project for your team's communications, a project for a running research thread. Each project has its own instructions and file uploads. Use Projects to keep context organized instead of relying on a single long conversation thread.</p>
+        `,
+      },
+      {
+        slug: 'chatgpt-for-writing-and-editing',
+        title: 'ChatGPT for Writing and Editing',
+        duration: '9 min',
+        summary: 'First drafts, editing, rewriting, and finding your voice with AI.',
+        body: `
+<h2>The right way to use ChatGPT for writing</h2>
+<p>ChatGPT is not a ghostwriter. It does not know your opinions, your experience, or your voice. What it does well is remove the blank-page problem: it gets you to a draft fast, and you shape that draft into something worth reading.</p>
+<p>The workflow: give ChatGPT the structure and the key points, get a draft, then rewrite the parts that don't sound like you. The final product should be yours. ChatGPT handles the scaffolding.</p>
+
+<h2>The prompts that work</h2>
+<p><strong>First draft:</strong> "Write a first draft of [document type] for [audience]. The main point is [core message]. Supporting points: [list]. Tone: [how you want to sound]. Length: approximately [X] words."</p>
+<p><strong>Editing existing writing:</strong> "Edit this for clarity and concision. Keep my voice. Flag any sentences that are hard to follow." — Paste your draft.</p>
+<p><strong>Tone adjustment:</strong> "This sounds too formal. Rewrite it so it sounds like I'm talking to a smart colleague, not presenting to a board."</p>
+<p><strong>Finding a stronger opening:</strong> "The opening paragraph of this is weak. Give me 3 alternative ways to start that pull the reader in faster." — Paste your draft.</p>
+
+<h2>Getting ChatGPT to match your voice</h2>
+<p>Paste 3-5 samples of your own writing and say: "Read these and learn my writing style. Then write [new piece] in the same voice." The model pattern-matches remarkably well to concrete examples, much better than it responds to descriptions like "write conversationally."</p>
+
+<h2>What to always rewrite yourself</h2>
+<p>Personal stories, opinions, specific data points, and anything where your credibility is on the line. ChatGPT will make things up to fill gaps. Review every factual claim it generates. The structure is a gift; the facts are your responsibility.</p>
+        `,
+      },
+      {
+        slug: 'chatgpt-for-research-and-analysis',
+        title: 'ChatGPT for Research and Analysis',
+        duration: '10 min',
+        summary: 'How to use ChatGPT for research without getting burned by hallucinations.',
+        body: `
+<h2>The one rule for research with ChatGPT</h2>
+<p>Use ChatGPT to structure your research, generate questions, and synthesize information you give it. Do not use it as a primary source of facts. It will confidently provide wrong information, outdated figures, and fabricated citations. Treat its factual outputs as hypotheses to verify, not conclusions to use.</p>
+<p>For real-time facts, use Perplexity. For document analysis, use NotebookLM. ChatGPT's research value is in synthesis and structuring, not in retrieval.</p>
+
+<h2>Where ChatGPT genuinely helps in research</h2>
+<p><strong>Framing a research question:</strong> "I need to understand [topic] for [purpose]. What are the most important questions I should be trying to answer? What frameworks exist for thinking about this?"</p>
+<p><strong>Synthesizing content you paste:</strong> "Here are notes from 5 articles on [topic]. Synthesize the key themes, where sources agree, and where they conflict." — Paste your notes. The model is excellent at this.</p>
+<p><strong>Identifying what you don't know:</strong> "Based on this analysis, what am I missing? What would a skeptic push back on? What should I research further?"</p>
+<p><strong>Building a research plan:</strong> "I need to make a decision about [topic] by [date]. What information do I need, in what order should I gather it, and where would I find it?"</p>
+
+<h2>Analysis workflows that work</h2>
+<p><strong>Competitor analysis:</strong> Paste competitor website copy, job postings, or press releases and ask: "What does this tell me about their strategy? What are they prioritizing? What are they not saying?"</p>
+<p><strong>Survey or feedback analysis:</strong> Paste raw responses and ask: "Identify the top 5 themes. Quote specific language customers use for each theme. What do they want that they're not getting?"</p>
+<p><strong>Decision analysis:</strong> "I'm deciding between [A] and [B]. Here is my situation: [context]. Act as a skeptical advisor. What are the three strongest arguments for each option? What am I not considering?"</p>
+
+<h2>Code interpreter for data</h2>
+<p>ChatGPT Plus users can upload spreadsheets and let the model run Python on your data. This is useful for: quick pivot tables, visualizing trends, finding patterns in survey data, and cleaning messy datasets. It is not a replacement for a data analyst, but it handles a surprising range of one-off analysis tasks.</p>
+        `,
+      },
+      {
+        slug: 'chatgpt-advanced-workflows',
+        title: 'Advanced ChatGPT Workflows',
+        duration: '9 min',
+        summary: 'DALL-E, web search, file uploads, and building workflows that run repeatedly.',
+        body: `
+<h2>Web search: when to use it</h2>
+<p>ChatGPT can search the web in real-time (in the paid plan). Enable it by clicking the search icon or asking ChatGPT to "search for" something. Use this for: current events, recent news about a company, today's prices or statistics, anything where recency matters.</p>
+<p>Do not use web search for deep research. It retrieves a few sources quickly, not a comprehensive view. For serious research, Perplexity is purpose-built for this and does it better.</p>
+
+<h2>File uploads: the most underused feature</h2>
+<p>You can upload PDFs, Word documents, Excel files, images, and more. ChatGPT reads them and can answer questions, summarize, compare, or extract specific information. Useful patterns:</p>
+<ul>
+  <li>Upload a contract and ask: "What are the key obligations on our side? What are the termination clauses? Are there any non-standard terms I should flag?"</li>
+  <li>Upload a competitor's annual report and ask: "What are their stated priorities for next year? What risks do they cite? What does this tell me about where they're investing?"</li>
+  <li>Upload meeting notes and ask: "What decisions were made? Who owns what? What questions are still open?"</li>
+</ul>
+
+<h2>DALL-E for professional use</h2>
+<p>ChatGPT Plus includes DALL-E image generation. Practical uses that save real time:</p>
+<ul>
+  <li>Presentation mockups: "Generate a simple illustration of [concept] suitable for a business presentation, clean lines, white background."</li>
+  <li>Social media visuals: "Create a professional-looking graphic that shows [data/concept], minimal style."</li>
+  <li>Concept visualization: show a stakeholder what you have in mind before you spend design budget on it.</li>
+</ul>
+<p>DALL-E is not good at text in images, complex layouts, or realistic photographs. Use it for conceptual and illustrative work.</p>
+
+<h2>Building reusable workflows</h2>
+<p>If you run the same type of task repeatedly, write it as a reusable prompt template and save it somewhere you can copy from. Candidates: weekly status report, meeting prep, competitor scan, customer email response. Each should include Role, Task, Context placeholders, and Format — fill in the variables each time and paste. Two minutes of setup saves the same two minutes every single week.</p>
+        `,
+      },
+    ],
+  },
+  {
+    slug: 'ai-for-sales',
+    title: 'AI for Sales Professionals',
+    tagline: 'Use AI across the full sales cycle without losing the human element that closes deals.',
+    description: 'A practical guide to using AI in prospecting, research, outreach, objection handling, and pipeline management — without turning your sales process into something that feels automated and impersonal.',
+    totalDuration: '34 min',
+    lessonCount: 4,
+    level: 'Intermediate',
+    category: 'Business Functions',
+    lessons: [
+      {
+        slug: 'ai-for-prospect-research',
+        title: 'AI for Prospect Research',
+        duration: '8 min',
+        summary: 'Build a complete picture of any prospect in 5 minutes instead of 45.',
+        body: `
+<h2>The research problem in sales</h2>
+<p>Good sales conversations require context: who you're talking to, what their company is doing, what pressures they're under, and what they care about. Gathering that context manually takes 30-45 minutes per prospect and often still misses things. AI compresses that to 5 minutes and often surfaces angles you would not have found.</p>
+
+<h2>The pre-call research prompt</h2>
+<p>Before any significant sales call, run this: "I'm meeting [name], [title] at [company] in [X] days. Here's what I know about them: [paste LinkedIn bio or brief description]. My product does [X]. Give me: (1) what they likely care about most in their role, (2) 3 intelligent questions I can ask that show I understand their business, (3) the business pressures their company is probably under right now, (4) any likely objections to [your product category]."</p>
+<p>Use Perplexity for the company context first — recent news, earnings calls if public, any press releases. Paste that into ChatGPT along with the LinkedIn profile. The combination of recent news plus role context produces prep that used to take an hour.</p>
+
+<h2>Researching the account, not just the contact</h2>
+<p>One person rarely buys. Ask ChatGPT: "For a [company size] company in [industry] buying [your product category], who are typically the stakeholders involved in the decision? What does each one care about most?" Then research each stakeholder separately. Walking into a deal knowing what the CFO, the IT lead, and the end user each want — before they're in the room — is a significant edge.</p>
+
+<h2>Monitoring accounts for trigger events</h2>
+<p>Use Perplexity to set up ongoing searches for key accounts. Leadership changes, funding rounds, new product launches, regulatory changes in their industry — these are trigger events that create buying opportunities. A company that just raised a Series B is actively spending. A company that just appointed a new CTO is reassessing its tech stack. Know before you call.</p>
+        `,
+      },
+      {
+        slug: 'ai-for-outreach-and-prospecting',
+        title: 'AI for Outreach and Prospecting',
+        duration: '9 min',
+        summary: 'Write outreach that gets responses, at scale, without sounding like a template.',
+        body: `
+<h2>Why most AI-generated outreach fails</h2>
+<p>The promise of AI-generated outreach is personalization at scale. The reality, for most teams, is generic messages that feel like templates because the AI had no real information about the recipient. "I noticed your company is growing fast" is not personalization. It is the illusion of it.</p>
+<p>AI generates good outreach when you give it real, specific information. The input quality determines the output quality. Garbage in, garbage out is never more true than in sales emails.</p>
+
+<h2>The right input for outreach generation</h2>
+<p>For each prospect, gather at minimum: their recent LinkedIn activity or posts, one piece of recent company news, and the specific business problem you believe they have. Then prompt: "Write a 3-sentence cold email to [name] at [company]. Context: [what you know about them]. The email should reference [specific thing] and connect it to [the problem we solve]. End with a low-friction ask — a 15-minute call, not a demo. No subject line yet."</p>
+<p>Then ask: "Now write 3 subject line options. Short, specific, no hype."</p>
+
+<h2>Follow-up sequences</h2>
+<p>Most sales require 5-8 touches before a response. AI makes it easy to write a full sequence at once: "Write a 5-email follow-up sequence for someone who received the first email but did not respond. Each email should: add new value (don't just follow up for the sake of it), be shorter than the previous, and shift the framing slightly. Emails 3 and 4 should approach from a different angle than emails 1 and 2."</p>
+
+<h2>A/B testing your messages</h2>
+<p>Give ChatGPT your best-performing message and ask: "Generate 3 variants that test different opening hooks, while keeping the core value proposition the same." Run the variants in your sequencing tool and let performance data tell you what's working. Iterate from results, not from opinions.</p>
+        `,
+      },
+      {
+        slug: 'ai-for-objection-handling',
+        title: 'AI for Objection Handling and Deal Reviews',
+        duration: '9 min',
+        summary: 'Prepare for every objection before it comes up and get sharper deal coaching.',
+        body: `
+<h2>Preparing for objections before the call</h2>
+<p>Every sales role has the same 8-12 objections that come up repeatedly. Most salespeople encounter them reactively and handle them with varying quality depending on how they feel that day. AI lets you prepare structured responses to every known objection so you are never caught off guard.</p>
+<p>Prompt: "I sell [product] to [buyer type]. The most common objections I face are [list your actual objections]. For each one, give me: (1) what the prospect really means when they say this (the underlying concern), (2) the most effective response that addresses the real concern, (3) a follow-up question that moves the conversation forward."</p>
+<p>Review and refine this document quarterly. Add new objections as they emerge. Brief your whole team on it.</p>
+
+<h2>Deal reviews with AI</h2>
+<p>When a deal is stalled or you are trying to figure out your next move, paste everything you know about the deal into ChatGPT: the company, the contacts, what's been said, where it stands, and what you have tried. Then ask: "Act as a skeptical sales manager reviewing this deal. What are the red flags? What information am I missing that I should have by now? What's the most likely reason this deal doesn't close, and what should my next move be?"</p>
+<p>The model pushes back on optimistic assumptions in ways that a busy manager often cannot take time to do. It is particularly good at identifying what you do not know — which is usually what kills deals.</p>
+
+<h2>Call analysis from transcripts</h2>
+<p>If you record and transcribe sales calls (Otter, Gong, Fireflies), paste the transcript and ask: "What did the prospect care about most based on this conversation? What did they not say that I should have asked about? What are the key next steps I committed to? What objections came up that I didn't fully handle?" Run this after every call you want to improve on. It is better than a manager listening to your calls because it has no agenda.</p>
+        `,
+      },
+      {
+        slug: 'ai-for-pipeline-and-forecasting',
+        title: 'AI for Pipeline Management and Forecasting',
+        duration: '8 min',
+        summary: 'Keep your CRM cleaner and your forecasts more honest with less manual work.',
+        body: `
+<h2>The CRM problem AI solves</h2>
+<p>CRMs are only as good as the data in them, and sales reps do not like entering data. The result: stale records, missing context, and forecasts built on incomplete information. AI does not solve the willingness problem, but it reduces the friction enough that more data actually gets captured.</p>
+
+<h2>CRM updates from call notes</h2>
+<p>After a call, paste your rough notes and ask: "Summarize this as a CRM note. Include: (1) what was discussed, (2) what the prospect's current situation is, (3) what they said about timing and budget, (4) agreed next steps with owners and dates, (5) any risks or concerns." Copy the output directly into your CRM. What used to take 10 minutes of formatting takes 2.</p>
+
+<h2>Pipeline review prompts</h2>
+<p>Export your pipeline to a spreadsheet, paste the key fields into ChatGPT, and ask: "Based on this pipeline, which deals look most at risk? Which have been in the current stage too long? What does the overall mix tell me about where I should focus this week?" The model identifies patterns across many deals that are easy to miss when you review them one at a time.</p>
+
+<h2>Forecast sanity checks</h2>
+<p>Before submitting your forecast, describe your committed deals to ChatGPT — stage, value, close date, what you know about the buyer — and ask: "What are the reasons each of these deals might not close when I think they will? What information would I need to be more confident?" Use the pushback to stress-test your number before it goes up the chain. Forecasting accuracy improves when you argue against your own optimism before you report it.</p>
+        `,
+      },
+    ],
+  },
+  {
     slug: 'ai-for-productivity',
     title: 'AI Productivity Stack',
     tagline: 'Build daily AI habits that actually compound.',
