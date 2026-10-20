@@ -6,6 +6,11 @@ const ts = require('typescript')
 const fs = require('node:fs')
 const original = require.extensions['.ts']
 require.extensions['.ts'] = (mod, file) => mod._compile(ts.transpileModule(fs.readFileSync(file, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText, file)
+// Replace only the quota SDK, never make network requests from tests.
+let quotaCheck = async () => ({ rateLimited: false })
+const sdkPath = require.resolve('@vercel/firewall')
+require(sdkPath)
+require.cache[sdkPath].exports = { checkRateLimit: (...args) => quotaCheck(...args) }
 const { POST } = require('../app/api/gtm-strategy/route.ts')
 const { isLabReport } = require('../lib/gtm-strategy.ts')
 require.extensions['.ts'] = original
@@ -82,5 +87,41 @@ test('backend safeguards and provider contract', async () => {
     assert.equal((await POST(request())).status, 429)
     release(Response.json({ choices: [{ finish_reason: 'stop', message: { content: JSON.stringify(report) } }] }))
     assert.equal((await pending).status, 200)
+    process.env.NODE_ENV = 'production'
+    process.env.GTM_LAB_ENABLED = 'true'
+    let providerCalls = 0
+    global.fetch = async () => {
+      providerCalls++
+      return Response.json({ choices: [{ finish_reason: 'stop', message: { content: JSON.stringify(report) } }] })
+    }
+    delete process.env.RATE_LIMIT_SECRET
+    assert.equal((await POST(request())).status, 503)
+    assert.equal(providerCalls, 0)
+    process.env.RATE_LIMIT_SECRET = 'test-placeholder'
+    for (const [result, status] of [
+      [{ rateLimited: true }, 429],
+      [{ rateLimited: false, error: 'not-found' }, 503],
+      [{ rateLimited: true, error: 'blocked' }, 503],
+      [{}, 503],
+    ]) {
+      quotaCheck = async (id, options) => {
+        assert.equal(id, 'gtm-generation')
+        assert.equal(options.rateLimitKey, 'gtm-lab-shared-v1')
+        assert.equal(options.timeout, 3000)
+        return result
+      }
+      const response = await POST(request())
+      assert.equal(response.status, status)
+      if (status === 429) assert.equal(response.headers.get('retry-after'), '600')
+      assert.equal(providerCalls, 0)
+    }
+    quotaCheck = async () => { throw new Error('private quota failure') }
+    const unavailable = await POST(request())
+    assert.equal(unavailable.status, 503)
+    assert.ok(!(await unavailable.text()).includes('private quota failure'))
+    assert.equal(providerCalls, 0)
+    quotaCheck = async () => ({ rateLimited: false })
+    assert.equal((await POST(request())).status, 200)
+    assert.equal(providerCalls, 1)
   } finally { global.fetch = savedFetch; Date.now = savedNow; process.env = saved }
 })
