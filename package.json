@@ -11,6 +11,7 @@
     "test:gtm": "node --test tests/gtm-strategy.cjs"
   },
   "dependencies": {
+    "@vercel/firewall": "^1.2.6",
     "next": "16.3.5",
     "next-sanity": "^13.3.4",
     "react": "19.2.8",

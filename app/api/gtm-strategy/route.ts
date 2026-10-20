@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { checkRateLimit } from '@vercel/firewall'
 import { isLabInput, isLabReport, reportSchema } from '../../../lib/gtm-strategy'
 
 export const runtime = 'nodejs'
+export const maxDuration = 60
 
 const SYSTEM = `You are an experienced startup GTM advisor. Generate a concise, actionable and differentiated strategy for the supplied founder context. Respond ONLY as a JSON object with exactly these fields:
 headline:string, executiveSummary:string,
@@ -54,6 +56,22 @@ export async function POST(req: NextRequest) {
   calls++
   active++
   try {
+    if (process.env.NODE_ENV === 'production') {
+      // Shared across server instances, not keyed by spoofable client headers.
+      // Vercel counters are regional; pin compute in vercel.json and retain a kill switch.
+      if (!process.env.RATE_LIMIT_SECRET) return json({ error: 'Usage protection is not configured.' }, 503)
+      try {
+        const result = await checkRateLimit('gtm-generation', {
+          request: req,
+          rateLimitKey: 'gtm-lab-shared-v1',
+          timeout: 3000,
+        })
+        if (result.error || typeof result.rateLimited !== 'boolean') return json({ error: 'Usage protection is temporarily unavailable. Please retry later.' }, 503)
+        if (result.rateLimited) return json({ error: 'The lab has reached its shared usage limit. Please try again in 10 minutes.' }, 429, { 'Retry-After': '600' })
+      } catch {
+        return json({ error: 'Usage protection is temporarily unavailable. Please retry later.' }, 503)
+      }
+    }
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
