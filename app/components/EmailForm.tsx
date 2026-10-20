@@ -24,7 +24,7 @@ export function EmailForm() {
   if (status === 'success') {
     return (
       <p style={{ fontSize: '15px', color: 'var(--green)', fontWeight: 600 }}>
-        You're in. We'll let you know when new courses drop.
+        You&apos;re in. We&apos;ll let you know when new courses drop.
       </p>
     )
   }

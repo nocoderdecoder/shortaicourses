@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { COURSES, getCourse } from '@/lib/courses'
@@ -60,9 +61,9 @@ export default async function CoursePage({ params }: Props) {
       />
       {/* Breadcrumb */}
       <nav style={{ marginBottom: '28px' }}>
-        <a href="/courses" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>
+        <Link href="/courses" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>
           ← All courses
-        </a>
+        </Link>
       </nav>
 
       {/* Course header */}
@@ -86,7 +87,7 @@ export default async function CoursePage({ params }: Props) {
 
       {/* Start CTA */}
       <div style={{ marginBottom: '48px' }}>
-        <a
+        <Link
           href={`/courses/${slug}/${course.lessons[0].slug}`}
           style={{
             display: 'inline-block',
@@ -100,7 +101,7 @@ export default async function CoursePage({ params }: Props) {
           }}
         >
           Start first lesson →
-        </a>
+        </Link>
       </div>
 
       {/* Lessons list */}
@@ -110,7 +111,7 @@ export default async function CoursePage({ params }: Props) {
         </h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           {course.lessons.map((lesson, i) => (
-            <a
+            <Link
               key={lesson.slug}
               href={`/courses/${slug}/${lesson.slug}`}
               style={{
@@ -152,7 +153,7 @@ export default async function CoursePage({ params }: Props) {
               <span style={{ fontSize: '12px', color: 'var(--text-faint)', flexShrink: 0 }}>
                 {lesson.duration}
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

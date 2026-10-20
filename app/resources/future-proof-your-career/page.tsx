@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,7 +10,7 @@ export default function FutureProofCareerPage() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
       <nav style={{ marginBottom: '32px' }}>
-        <a href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</a>
+        <Link href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</Link>
       </nav>
 
       <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-faint)', marginBottom: '14px' }}>
@@ -31,11 +32,11 @@ export default function FutureProofCareerPage() {
         </h2>
 
         <p style={{ marginBottom: '20px' }}>
-          The honest answer is: the mechanical parts of knowledge work. Not all of it, and not the parts that actually create professional value. But a meaningful chunk of what fills most professionals' days.
+          The honest answer is: the mechanical parts of knowledge work. Not all of it, and not the parts that actually create professional value. But a meaningful chunk of what fills most professionals&apos; days.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          Specifically: drafting. Formatting. Retrieving. Summarizing. First-pass research. Generating options. Translating information between formats and audiences. These tasks used to take 40-60% of a knowledge worker's time. AI does them faster, and often well enough that humans mostly need to edit rather than create from scratch.
+          Specifically: drafting. Formatting. Retrieving. Summarizing. First-pass research. Generating options. Translating information between formats and audiences. These tasks used to take 40-60% of a knowledge worker&apos;s time. AI does them faster, and often well enough that humans mostly need to edit rather than create from scratch.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
@@ -75,7 +76,7 @@ export default function FutureProofCareerPage() {
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          Both "ignore AI" and "replace humans with AI" are losing strategies. The winning position is: human judgment augmented by AI capability.
+          Both &quot;ignore AI&quot; and &quot;replace humans with AI&quot; are losing strategies. The winning position is: human judgment augmented by AI capability.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
@@ -134,7 +135,7 @@ export default function FutureProofCareerPage() {
           The AI Foundations and AI Productivity courses are the right starting point if you want practical skills that transfer to your actual job.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-          <a
+          <Link
             href="/courses/ai-foundations-for-business"
             style={{
               display: 'inline-block',
@@ -148,8 +149,8 @@ export default function FutureProofCareerPage() {
             }}
           >
             AI Foundations →
-          </a>
-          <a
+          </Link>
+          <Link
             href="/courses/ai-for-productivity"
             style={{
               display: 'inline-block',
@@ -164,8 +165,8 @@ export default function FutureProofCareerPage() {
             }}
           >
             AI Productivity Stack →
-          </a>
-          <a
+          </Link>
+          <Link
             href="/courses"
             style={{
               display: 'inline-block',
@@ -180,7 +181,7 @@ export default function FutureProofCareerPage() {
             }}
           >
             All courses
-          </a>
+          </Link>
         </div>
       </div>
     </div>

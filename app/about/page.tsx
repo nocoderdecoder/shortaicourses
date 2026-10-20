@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function AboutPage() {
         }}
       />
       <nav style={{ marginBottom: '32px' }}>
-        <a href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</a>
+        <Link href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</Link>
       </nav>
 
       <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-faint)', marginBottom: '14px' }}>
@@ -37,7 +38,7 @@ export default function AboutPage() {
 
       <div style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-muted)' }}>
         <p style={{ marginBottom: '20px' }}>
-          I'm Anshul Gupta — GTM Strategy at Google, Kellogg MBA, and someone who has spent the past few years building AI products without a traditional engineering degree.
+          I&apos;m Anshul Gupta — GTM Strategy at Google, Kellogg MBA, and someone who has spent the past few years building AI products without a traditional engineering degree.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
@@ -49,7 +50,7 @@ export default function AboutPage() {
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          I've personally used everything I teach here in my own work at Google and in the AI products I've built. This isn't theory. It's what actually works for business professionals who want to use AI effectively without becoming engineers.
+          I&apos;ve personally used everything I teach here in my own work at Google and in the AI products I&apos;ve built. This isn&apos;t theory. It&apos;s what actually works for business professionals who want to use AI effectively without becoming engineers.
         </p>
 
         <p style={{ marginBottom: '40px' }}>

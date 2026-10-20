@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { COURSES, getLesson } from '@/lib/courses'
@@ -63,9 +64,9 @@ export default async function LessonPage({ params }: Props) {
 
         {/* Breadcrumb */}
         <nav style={{ marginBottom: '32px', display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <a href="/courses" style={{ fontSize: '13px', color: 'var(--text-faint)', textDecoration: 'none' }}>Courses</a>
+          <Link href="/courses" style={{ fontSize: '13px', color: 'var(--text-faint)', textDecoration: 'none' }}>Courses</Link>
           <span style={{ color: 'var(--border)' }}>/</span>
-          <a href={`/courses/${slug}`} style={{ fontSize: '13px', color: 'var(--text-faint)', textDecoration: 'none' }}>{course.title}</a>
+          <Link href={`/courses/${slug}`} style={{ fontSize: '13px', color: 'var(--text-faint)', textDecoration: 'none' }}>{course.title}</Link>
           <span style={{ color: 'var(--border)' }}>/</span>
           <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Lesson {index + 1}</span>
         </nav>
@@ -98,7 +99,7 @@ export default async function LessonPage({ params }: Props) {
         }}>
           <div>
             {prev && (
-              <a
+              <Link
                 href={`/courses/${slug}/${prev.slug}`}
                 style={{
                   display: 'flex',
@@ -114,12 +115,12 @@ export default async function LessonPage({ params }: Props) {
               >
                 <span style={{ fontSize: '11px', color: 'var(--text-faint)', fontWeight: 600 }}>← Previous</span>
                 <span style={{ fontSize: '13px', color: 'var(--text)', fontWeight: 600 }}>{prev.title}</span>
-              </a>
+              </Link>
             )}
           </div>
           <div>
             {next ? (
-              <a
+              <Link
                 href={`/courses/${slug}/${next.slug}`}
                 style={{
                   display: 'flex',
@@ -135,9 +136,9 @@ export default async function LessonPage({ params }: Props) {
               >
                 <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Next →</span>
                 <span style={{ fontSize: '13px', color: '#fff', fontWeight: 600 }}>{next.title}</span>
-              </a>
+              </Link>
             ) : (
-              <a
+              <Link
                 href={`/courses/${slug}`}
                 style={{
                   display: 'flex',
@@ -153,7 +154,7 @@ export default async function LessonPage({ params }: Props) {
               >
                 <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Course complete!</span>
                 <span style={{ fontSize: '13px', color: '#fff', fontWeight: 600 }}>Back to course →</span>
-              </a>
+              </Link>
             )}
           </div>
         </nav>
@@ -170,7 +171,7 @@ export default async function LessonPage({ params }: Props) {
             {course.title}
           </p>
           {course.lessons.map((l, i) => (
-            <a
+            <Link
               key={l.slug}
               href={`/courses/${slug}/${l.slug}`}
               style={{
@@ -204,7 +205,7 @@ export default async function LessonPage({ params }: Props) {
               }}>
                 {l.title}
               </span>
-            </a>
+            </Link>
           ))}
         </aside>
 
