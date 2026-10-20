@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,7 +10,7 @@ export default function ChatGPTvsClaudePage() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
       <nav style={{ marginBottom: '32px' }}>
-        <a href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</a>
+        <Link href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</Link>
       </nav>
 
       <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-faint)', marginBottom: '14px' }}>
@@ -31,7 +32,7 @@ export default function ChatGPTvsClaudePage() {
         </h2>
 
         <p style={{ marginBottom: '20px' }}>
-          Use both. They have genuinely different strengths. Anyone who says "just use X" has probably not used both seriously for professional work.
+          Use both. They have genuinely different strengths. Anyone who says &quot;just use X&quot; has probably not used both seriously for professional work.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
@@ -63,7 +64,7 @@ export default function ChatGPTvsClaudePage() {
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          For real-time research, Perplexity is better than both. It cites its sources, which makes it checkable. Use ChatGPT's web search for quick checks ("what is the current price of X," "what happened with company Y this week") — it is convenient and fast, but not comprehensive.
+          For real-time research, Perplexity is better than both. It cites its sources, which makes it checkable. Use ChatGPT&apos;s web search for quick checks (&quot;what is the current price of X,&quot; &quot;what happened with company Y this week&quot;) — it is convenient and fast, but not comprehensive.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
@@ -79,7 +80,7 @@ export default function ChatGPTvsClaudePage() {
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          Claude's context window is large enough to hold entire books. This matters practically for legal review, due diligence, and analyzing long reports where missing context partway through leads to wrong answers.
+          Claude&apos;s context window is large enough to hold entire books. This matters practically for legal review, due diligence, and analyzing long reports where missing context partway through leads to wrong answers.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
@@ -87,7 +88,7 @@ export default function ChatGPTvsClaudePage() {
         </h2>
 
         <p style={{ marginBottom: '20px' }}>
-          ChatGPT integrates natively with more third-party tools. It connects to Zapier, can be embedded in more workflows, and has a larger ecosystem of GPTs (custom assistants built on top of the base model). For teams that want to automate workflows or build internal tools, ChatGPT's integration layer is more mature.
+          ChatGPT integrates natively with more third-party tools. It connects to Zapier, can be embedded in more workflows, and has a larger ecosystem of GPTs (custom assistants built on top of the base model). For teams that want to automate workflows or build internal tools, ChatGPT&apos;s integration layer is more mature.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
@@ -99,11 +100,11 @@ export default function ChatGPTvsClaudePage() {
         </h2>
 
         <p style={{ marginBottom: '20px' }}>
-          Both are strong for coding assistance. For non-coders who want to do data analysis without writing code, ChatGPT's Code Interpreter (available in the paid plan) is a distinct advantage: upload a spreadsheet, ask a question, and it runs Python in the browser and shows you the result. Claude does not have this.
+          Both are strong for coding assistance. For non-coders who want to do data analysis without writing code, ChatGPT&apos;s Code Interpreter (available in the paid plan) is a distinct advantage: upload a spreadsheet, ask a question, and it runs Python in the browser and shows you the result. Claude does not have this.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          For actual software development, both are strong. Claude tends to produce cleaner code with better explanations. ChatGPT's code execution environment is useful for testing immediately rather than copying to a local environment.
+          For actual software development, both are strong. Claude tends to produce cleaner code with better explanations. ChatGPT&apos;s code execution environment is useful for testing immediately rather than copying to a local environment.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
@@ -133,7 +134,7 @@ export default function ChatGPTvsClaudePage() {
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          The professionals who get the most from AI are not the ones who picked the "best" tool. They are the ones who know which tool to use for which job, and switch quickly. That is a skill worth developing.
+          The professionals who get the most from AI are not the ones who picked the &quot;best&quot; tool. They are the ones who know which tool to use for which job, and switch quickly. That is a skill worth developing.
         </p>
 
       </div>
@@ -146,7 +147,7 @@ export default function ChatGPTvsClaudePage() {
           The ChatGPT for Work course covers the setup, prompts, and workflows that make the difference between occasional use and daily productivity.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-          <a
+          <Link
             href="/courses/chatgpt-for-work"
             style={{
               display: 'inline-block',
@@ -160,8 +161,8 @@ export default function ChatGPTvsClaudePage() {
             }}
           >
             ChatGPT for Work →
-          </a>
-          <a
+          </Link>
+          <Link
             href="/courses/ai-foundations-for-business"
             style={{
               display: 'inline-block',
@@ -176,8 +177,8 @@ export default function ChatGPTvsClaudePage() {
             }}
           >
             AI Foundations →
-          </a>
-          <a
+          </Link>
+          <Link
             href="/courses"
             style={{
               display: 'inline-block',
@@ -192,7 +193,7 @@ export default function ChatGPTvsClaudePage() {
             }}
           >
             All courses
-          </a>
+          </Link>
         </div>
       </div>
     </div>

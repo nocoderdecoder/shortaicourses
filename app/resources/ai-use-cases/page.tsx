@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,7 +10,7 @@ export default function AIUseCasesPage() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
       <nav style={{ marginBottom: '32px' }}>
-        <a href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</a>
+        <Link href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</Link>
       </nav>
 
       <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-faint)', marginBottom: '14px' }}>
@@ -290,7 +291,7 @@ export default function AIUseCasesPage() {
           The ChatGPT for Work course covers the prompts and workflows behind many of these use cases in detail.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-          <a
+          <Link
             href="/courses/chatgpt-for-work"
             style={{
               display: 'inline-block',
@@ -304,8 +305,8 @@ export default function AIUseCasesPage() {
             }}
           >
             ChatGPT for Work →
-          </a>
-          <a
+          </Link>
+          <Link
             href="/courses/ai-for-sales"
             style={{
               display: 'inline-block',
@@ -320,8 +321,8 @@ export default function AIUseCasesPage() {
             }}
           >
             AI for Sales →
-          </a>
-          <a
+          </Link>
+          <Link
             href="/courses"
             style={{
               display: 'inline-block',
@@ -336,7 +337,7 @@ export default function AIUseCasesPage() {
             }}
           >
             All courses
-          </a>
+          </Link>
         </div>
       </div>
     </div>

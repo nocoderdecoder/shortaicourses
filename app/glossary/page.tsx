@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ const TERMS = [
   {
     term: 'Hallucination',
     definition: 'When an AI model confidently states something that is false.',
-    explanation: `Models generate plausible text, and plausible is not the same as accurate. They will fabricate citations, invent statistics, and state wrong facts with complete confidence. This is not a bug that will be fully fixed — it is a property of how these models work. The practical implication: treat AI factual outputs as hypotheses to verify, especially for anything you will share externally or use to make decisions. <a href="/courses/ai-foundations-for-business/how-llms-work-in-plain-english" style="color:var(--accent);text-decoration:none">See the lesson on how LLMs work</a> for more on why this happens.`,
+    explanation: `Models generate plausible text, and plausible is not the same as accurate. They will fabricate citations, invent statistics, and state wrong facts with complete confidence. This is not a bug that will be fully fixed — it is a property of how these models work. The practical implication: treat AI factual outputs as hypotheses to verify, especially for anything you will share externally or use to make decisions. <Link href="/courses/ai-foundations-for-business/how-llms-work-in-plain-english" style="color:var(--accent);text-decoration:none">See the lesson on how LLMs work</Link> for more on why this happens.`,
   },
   {
     term: 'LLM (Large Language Model)',
@@ -54,7 +55,7 @@ const TERMS = [
   {
     term: 'Prompt',
     definition: 'The input you give to an AI model — your question, instruction, or request.',
-    explanation: `The quality of a prompt directly determines the quality of the response. A vague prompt gets a vague answer; a specific, well-structured prompt gets a useful one. "Prompt engineering" is the skill of writing prompts that consistently get good outputs. <a href="/courses/ai-foundations-for-business/how-to-prompt-well" style="color:var(--accent);text-decoration:none">The lesson on prompting</a> covers the patterns that work best in practice.`,
+    explanation: `The quality of a prompt directly determines the quality of the response. A vague prompt gets a vague answer; a specific, well-structured prompt gets a useful one. "Prompt engineering" is the skill of writing prompts that consistently get good outputs. <Link href="/courses/ai-foundations-for-business/how-to-prompt-well" style="color:var(--accent);text-decoration:none">The lesson on prompting</Link> covers the patterns that work best in practice.`,
   },
   {
     term: 'RAG (Retrieval-Augmented Generation)',
@@ -95,7 +96,7 @@ export default function GlossaryPage() {
       />
 
       <nav style={{ marginBottom: '32px' }}>
-        <a href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</a>
+        <Link href="/" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}>← Home</Link>
       </nav>
 
       <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-faint)', marginBottom: '14px' }}>
@@ -134,7 +135,7 @@ export default function GlossaryPage() {
         <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '20px', lineHeight: 1.6 }}>
           The AI Foundations for Business course explains LLMs, prompting, and practical AI skills in under 40 minutes.
         </p>
-        <a
+        <Link
           href="/courses/ai-foundations-for-business"
           style={{
             display: 'inline-block',
@@ -148,8 +149,8 @@ export default function GlossaryPage() {
           }}
         >
           Start the course →
-        </a>
-        <a
+        </Link>
+        <Link
           href="/courses"
           style={{
             display: 'inline-block',
@@ -160,7 +161,7 @@ export default function GlossaryPage() {
           }}
         >
           Browse all courses
-        </a>
+        </Link>
       </div>
     </div>
   )

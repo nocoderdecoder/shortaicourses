@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import { COURSES } from '@/lib/courses'
 
@@ -29,7 +30,7 @@ export default function CoursesPage() {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '16px' }}>
         {COURSES.map((course) => (
-          <a
+          <Link
             key={course.slug}
             href={`/courses/${course.slug}`}
             className="card-lift"
@@ -72,7 +73,7 @@ export default function CoursesPage() {
               <span style={{ fontSize: '12px', color: 'var(--text-faint)' }}>📚 {course.lessonCount} lessons</span>
               <span style={{ fontSize: '12px', color: 'var(--text-faint)' }}>⏱ {course.totalDuration}</span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>

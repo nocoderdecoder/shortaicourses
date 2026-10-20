@@ -148,3 +148,17 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
+
+/* Keep long founder inputs and generated reports inside the lab layout. */
+.gtm-lab { overflow-wrap: anywhere; }
+.gtm-lab :where(div, form, aside, section, fieldset) { min-width: 0; }
+.gtm-lab :where(button, input, textarea):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.gtm-lab button { min-height: 44px; }
+.gtm-lab button:disabled { cursor: wait; opacity: .65; }
+.gtm-lab textarea { resize: vertical; }
+
+.gtm-lab { --lab-ink: var(--accent); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .gtm-lab { --lab-ink: #93c5fd; }
+}
+:root[data-theme="dark"] .gtm-lab { --lab-ink: #93c5fd; }

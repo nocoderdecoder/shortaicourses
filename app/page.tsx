@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { COURSES } from '@/lib/courses'
 import { EmailForm } from './components/EmailForm'
 
@@ -56,7 +57,7 @@ export default function Home() {
             Short, practical AI courses for business professionals. No jargon. No coding. Just the skills that help you work faster and think sharper.
           </p>
 
-          <a
+          <Link
             href="/courses"
             style={{
               display: 'inline-block',
@@ -71,7 +72,7 @@ export default function Home() {
             }}
           >
             Browse all courses →
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -95,14 +96,14 @@ export default function Home() {
           <h2 style={{ fontSize: '20px', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text)' }}>
             Start here
           </h2>
-          <a href="/courses" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}>
+          <Link href="/courses" style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}>
             All courses →
-          </a>
+          </Link>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
           {COURSES.map((course) => (
-            <a
+            <Link
               key={course.slug}
               href={`/courses/${course.slug}`}
               className="card-lift"
@@ -144,7 +145,7 @@ export default function Home() {
                 <span style={{ fontSize: '12px', color: 'var(--text-faint)' }}>{course.lessonCount} lessons</span>
                 <span style={{ fontSize: '12px', color: 'var(--text-faint)' }}>{course.totalDuration}</span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -156,11 +157,11 @@ export default function Home() {
             Why this exists
           </p>
           <p style={{ fontSize: '17px', lineHeight: 1.75, color: 'var(--text-muted)', marginBottom: '20px' }}>
-            I'm a GTM strategist at Google and a Kellogg MBA. I built these courses because every AI resource I found was either for engineers or 40 hours long. Business professionals deserve something short, practical, and immediately useful.
+            I&apos;m a GTM strategist at Google and a Kellogg MBA. I built these courses because every AI resource I found was either for engineers or 40 hours long. Business professionals deserve something short, practical, and immediately useful.
           </p>
-          <a href="/about" style={{ fontSize: '14px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>
+          <Link href="/about" style={{ fontSize: '14px', color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>
             More about this project →
-          </a>
+          </Link>
         </div>
       </section>
 

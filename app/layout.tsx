@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
@@ -39,18 +40,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 function Nav() {
   return (
     <header style={{ borderBottom: '1px solid var(--border)', background: 'var(--bg)' }} className="sticky top-0 z-50 backdrop-blur-sm">
-      <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <a href="/" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text)', textDecoration: 'none', letterSpacing: '-0.01em' }}>
+      <div className="max-w-5xl mx-auto px-4 min-h-14 py-3 flex flex-wrap gap-3 items-center justify-between">
+        <Link href="/" style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text)', textDecoration: 'none', letterSpacing: '-0.01em' }}>
           Short AI Courses
-        </a>
-        <nav className="flex items-center gap-6">
-          <a href="/courses" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
+        </Link>
+        <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-3 sm:gap-6">
+          <Link href="/courses" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
             All Courses
-          </a>
-          <a href="/about" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
+          </Link>
+          <Link href="/tools/gtm-strategy-lab" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }}>GTM Lab</Link>
+          <Link href="/about" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
             About
-          </a>
-          <a
+          </Link>
+          <Link
             href="/courses"
             style={{
               fontSize: '13px',
@@ -63,7 +65,7 @@ function Nav() {
             }}
           >
             Start Learning
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
@@ -84,8 +86,8 @@ function Footer() {
           </p>
         </div>
         <div className="flex gap-5">
-          <a href="/courses" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>Courses</a>
-          <a href="/about" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>About</a>
+          <Link href="/courses" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>Courses</Link>
+          <Link href="/about" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>About</Link>
           <a href="https://anshul.ai" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>anshul.ai</a>
         </div>
       </div>
