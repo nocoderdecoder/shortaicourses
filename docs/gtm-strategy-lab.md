@@ -33,4 +33,4 @@ Backend tests mock fetch; they never contact OpenAI. Browser QA uses mocked repo
 
 Lint cleanup replaces existing internal anchors with Next Link and escapes JSX punctuation without changing course copy. The shared navigation wraps on small screens and now links to the Lab.
 
-Build uses the supported Next.js webpack builder: Turbopack repeatedly failed to bind its PostCSS worker port in this execution environment. The webpack production build avoids that environment-specific failure. The existing Open Graph image Edge runtime produces a deprecation warning.
+Build uses the supported Next.js webpack builder: Turbopack repeatedly failed to bind its PostCSS worker port in this execution environment. The webpack production build avoids that environment-specific failure. The existing Open Graph image now uses the Node.js runtime: its Edge bundle exceeded the existing Vercel plan limit (1.08 MB versus 1 MB), blocking deployment. Node.js retains the image without a plan upgrade.

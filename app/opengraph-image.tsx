@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 export const alt = 'Short AI Courses — Free practical AI for business professionals'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
