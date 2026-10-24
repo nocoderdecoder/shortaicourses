@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: siteUrl('/'), changeFrequency: 'weekly', priority: 1 },
     { url: siteUrl('/courses'), changeFrequency: 'weekly', priority: 0.9 },
     { url: siteUrl('/about'), changeFrequency: 'monthly', priority: 0.5 },
+    { url: siteUrl('/resources'), changeFrequency: 'monthly', priority: 0.8 },
     { url: siteUrl('/glossary'), changeFrequency: 'monthly', priority: 0.7 },
     { url: siteUrl('/resources/ai-use-cases'), changeFrequency: 'monthly', priority: 0.7 },
     { url: siteUrl('/resources/future-proof-your-career'), changeFrequency: 'monthly', priority: 0.6 },

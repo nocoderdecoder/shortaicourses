@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { COURSES, getLesson } from '@/lib/courses'
+import { getRelatedResource } from '@/lib/resources'
 import { siteUrl } from '@/lib/site'
 import { LessonBody } from '@/app/components/LessonBody'
 
@@ -33,6 +34,7 @@ export default async function LessonPage({ params }: Props) {
   const { course, lesson, index } = found
   const prev = index > 0 ? course.lessons[index - 1] : null
   const next = index < course.lessons.length - 1 ? course.lessons[index + 1] : null
+  const relatedResource = getRelatedResource(slug)
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr min(700px, 100%) 1fr', minHeight: '80vh' }}>
@@ -42,12 +44,14 @@ export default async function LessonPage({ params }: Props) {
           __html: JSON.stringify([
             {
               '@context': 'https://schema.org',
-              '@type': 'EducationalArticle',
+              '@type': 'LearningResource',
               name: lesson.title,
               description: lesson.summary,
-              author: { '@type': 'Person', name: 'Anshul Gupta' },
+              url: siteUrl(`/courses/${slug}/${lessonSlug}`),
+              learningResourceType: 'Lesson',
+              author: { '@type': 'Person', name: 'Anshul Gupta', url: siteUrl('/about') },
               educationalLevel: course.level,
-              isPartOf: { '@type': 'Course', name: course.title },
+              isPartOf: { '@type': 'Course', name: course.title, url: siteUrl(`/courses/${slug}`) },
             },
             {
               '@context': 'https://schema.org',
@@ -210,6 +214,16 @@ export default async function LessonPage({ params }: Props) {
             </Link>
           ))}
         </aside>
+
+        {relatedResource && (
+          <aside className="mt-8 border-t pt-7" style={{ borderColor: 'var(--border)' }}>
+            <p className="text-sm font-bold mb-2" style={{ color: 'var(--text)' }}>Related guide</p>
+            <p className="text-sm leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>{relatedResource.description}</p>
+            <Link href={relatedResource.href} className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>
+              {relatedResource.title} →
+            </Link>
+          </aside>
+        )}
 
       </article>
       <div /> {/* right gutter */}

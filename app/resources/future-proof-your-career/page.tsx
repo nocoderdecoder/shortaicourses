@@ -4,7 +4,7 @@ import { siteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'How to Future-Proof Your Career with AI',
-  description: 'A clear-eyed look at what AI is actually displacing, what it is not, and what to do about it.',
+  description: 'A practical plan for evaluating AI in your work, strengthening your judgment, and preparing for changing responsibilities.',
   alternates: { canonical: siteUrl('/resources/future-proof-your-career') },
 }
 
@@ -24,41 +24,41 @@ export default function FutureProofCareerPage() {
       </h1>
 
       <p style={{ fontSize: '16px', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '40px' }}>
-        A clear-eyed look at what AI is actually displacing, what it is not, and what to do about it.
+        A practical plan for evaluating AI in your work, strengthening your judgment, and preparing for changing responsibilities.
       </p>
 
       <div style={{ fontSize: '16px', lineHeight: 1.8, color: 'var(--text-muted)' }}>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
-          What AI is actually taking over
+          Where AI can help with recurring work
         </h2>
 
         <p style={{ marginBottom: '20px' }}>
-          The honest answer is: the mechanical parts of knowledge work. Not all of it, and not the parts that actually create professional value. But a meaningful chunk of what fills most professionals&apos; days.
+          Start by looking at tasks rather than entire job titles. Repetitive parts of knowledge work are useful candidates for a small AI experiment, but their importance and difficulty vary from role to role.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          Specifically: drafting. Formatting. Retrieving. Summarizing. First-pass research. Generating options. Translating information between formats and audiences. These tasks used to take 40-60% of a knowledge worker&apos;s time. AI does them faster, and often well enough that humans mostly need to edit rather than create from scratch.
+          Candidates include drafting, formatting, summarizing, first-pass research, generating options, and translating information between formats and audiences. There is no single time-saving estimate that applies to all of them. Measure a task with and without assistance, including the time spent checking and correcting the result.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          This is not a slow change. Organizations that have actually deployed AI tools at scale are already seeing output-per-person change significantly. The question is not whether this happens — it is happening now — but what it means for you specifically.
+          The useful question is where AI improves your own work at an acceptable level of quality. A workflow that helps someone else may add review time or introduce errors in your setting. Start with a reversible task and define what a good result looks like.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
-          What it is not taking over
+          Where your responsibility remains
         </h2>
 
         <p style={{ marginBottom: '20px' }}>
-          Judgment. Relationships. Organizational context. Accountability. The things that require you to be a person who shows up somewhere, knows people, and is trusted.
+          Judgment, relationships, organizational context, and accountability deserve deliberate attention. AI can support parts of these activities, but you still need to decide what is appropriate and take responsibility for the result.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          AI can draft the email, but it cannot read the room. It can generate 10 strategies, but it cannot know which one your CEO will actually champion. It can analyze the data, but it cannot negotiate with the client or manage the politics of a cross-functional project. It can identify the right answer, but it cannot be held responsible for acting on it.
+          AI can draft an email or suggest strategies, but it may be missing the history behind a relationship, an unstated constraint, or a commitment you have already made. Supply the relevant context, challenge its assumptions, and make the final decision yourself.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          The parts of work that are irreducibly human — trust, relationships, judgment in ambiguous situations, accountability — are not going away. If anything, they become more valuable as the mechanical output gets commoditized.
+          No checklist can guarantee that a role will be protected from change. Strengthening your domain knowledge, relationships, and ability to evaluate evidence gives you more ways to contribute as tools and responsibilities evolve.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
@@ -66,19 +66,19 @@ export default function FutureProofCareerPage() {
         </h2>
 
         <p style={{ marginBottom: '20px' }}>
-          The professionals who will command the most value are the ones who can do three things: produce excellent judgment, build real relationships, and use AI to multiply their output in the areas where AI actually helps.
+          A useful development plan combines three things: stronger domain judgment, reliable working relationships, and the ability to use AI where it produces a measurable improvement.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          The professionals who will struggle are the ones whose entire value was in doing mechanical tasks well. The analyst who could pull and format data manually. The coordinator who could track status and send updates. The writer who could produce competent, serviceable first drafts. If the core skill is something AI can replicate, the market value of that skill will compress.
+          If your role includes repetitive data formatting, status reporting, or first drafts, examine what happens before and after those steps. Can you improve the question being asked, find a data-quality problem, or help someone act on the result? Those are concrete ways to broaden your contribution.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          The professionals who will win are the ones who combine human judgment with AI output — someone who can produce in an hour what used to take a team a week, and who has the judgment to know when the AI output is right and when it is missing something important.
+          Track outcomes beyond speed: fewer errors, clearer decisions, useful customer feedback, or less rework for colleagues. Faster output matters only if it meets the quality required by the task.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          Both &quot;ignore AI&quot; and &quot;replace humans with AI&quot; are losing strategies. The winning position is: human judgment augmented by AI capability.
+          Evaluate each workflow on its merits. Keep the steps where assistance helps and retain human review where a mistake would matter.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
@@ -90,7 +90,7 @@ export default function FutureProofCareerPage() {
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          This is not about proving a point. It is about building the habit. The people who will adapt to AI-augmented work are the ones who start building those habits now, not the ones who wait until they are forced to.
+          Record how long the task took, what you had to fix, and whether the result was useful. Repeat the experiment before deciding to make it a habit.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
@@ -102,7 +102,7 @@ export default function FutureProofCareerPage() {
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          The professionals who have done this are not worried about AI displacement. They are worried about being stuck doing work that AI cannot help with. The frame has already flipped for them.
+          Keep a short log of successful prompts, failures, and situations where manual work was better. Share a useful example with a colleague and compare notes on quality, not just speed.
         </p>
 
         <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text)', marginTop: '40px', marginBottom: '16px', letterSpacing: '-0.02em' }}>
@@ -114,16 +114,16 @@ export default function FutureProofCareerPage() {
         </p>
 
         <p style={{ marginBottom: '12px' }}>
-          Then look at what is left — the things where AI clearly cannot help. Those are the parts of your job that are genuinely defensible. Invest in them. Build skills, relationships, and track record in the areas where you bring something AI cannot replicate.
+          Then identify the responsibilities where your context, relationships, or expertise make the biggest difference. Choose one to strengthen through a project, feedback from a colleague, or more focused practice.
         </p>
 
         <p style={{ marginBottom: '20px' }}>
-          The goal is not to be indispensable because no one can operate the legacy system. The goal is to be indispensable because you have the judgment, relationships, and context that no system can replicate.
+          Revisit the map as your tools and job change. Use it to guide a conversation with your manager about where to spend your time and which skills to develop next.
         </p>
 
         <blockquote style={{ borderLeft: '3px solid var(--accent)', paddingLeft: '20px', margin: '32px 0', fontStyle: 'normal' }}>
           <p style={{ fontSize: '17px', color: 'var(--text)', fontWeight: 500, lineHeight: 1.6 }}>
-            The professionals who will do best are not the ones who resist AI or the ones who trust it blindly. They are the ones who know exactly where it helps and exactly where their own judgment matters more.
+            Build a repeatable habit: try a useful task, check the result, measure the outcome, and adjust. Career preparation is an ongoing practice, not a guarantee against change.
           </p>
         </blockquote>
 
