@@ -158,7 +158,7 @@ export const COURSES: Course[] = [
     title: 'Prompting for Professionals',
     tagline: 'Write prompts that get work done, not ones that need five rounds of back-and-forth.',
     description: 'Most people use AI like a search engine and get mediocre results. This course teaches the mental models and techniques that make the difference between a useful tool and a productivity multiplier.',
-    totalDuration: '32 min',
+    totalDuration: '36 min',
     lessonCount: 4,
     level: 'Beginner',
     category: 'Skills',
@@ -255,25 +255,46 @@ export const COURSES: Course[] = [
       {
         slug: 'prompt-templates-for-business',
         title: 'Prompt Templates for Common Business Tasks',
-        duration: '7 min',
-        summary: 'Copy-paste templates for the tasks you do every week.',
+        duration: '10 min',
+        summary: 'Five copyable business prompts, with worked examples and checks before you use the output.',
         body: `
-<p>These templates are starting points, not scripts. Fill in the brackets with your specifics, and adjust the tone and length to match your situation. The structure is what matters: role, task, context, format, all in one place.</p>
+<p>Use these business prompt templates when you have a real source, a clear audience, and a decision to make. Replace every bracketed field before you copy a prompt. If a field is unknown, say so. Treat the output as a draft to inspect, not as evidence that the model checked facts.</p>
+<p><strong>Protect your data first:</strong> Use only an AI tool approved by your organization. Remove names, email addresses, deal terms, customer details, and other confidential information unless your policy permits sharing them with that tool. The fictional examples below contain no real customer data.</p>
 
-<h2>Before a meeting</h2>
-<p><code>I have a meeting with [name/role] from [company] in [X] days. The purpose is [goal]. Here is what I know about them: [LinkedIn summary, recent news, prior conversations]. Give me: (1) 3 talking points that position me well for my goal, (2) 3 questions that show I have done my homework, (3) 2 likely objections and how to handle them.</code></p>
+<h2>1. Prepare for a meeting from a short brief</h2>
+<p>Give the model only facts you can verify. Ask for questions, not invented research about the person you are meeting.</p>
+<p><code>I am [your role] preparing for a [meeting type] with [role, not a private name]. My goal is [specific decision or next step]. Here are the verified facts I can share: [facts and source dates]. Known constraints: [time, budget, or scope]. Draft a one-page brief with: (1) two opening questions, (2) three talking points tied to the facts, (3) two possible concerns phrased as hypotheses, and (4) one proposed next step. Label anything that needs verification. Do not invent facts about the other person or company.</code></p>
+<p><strong>Synthetic input example:</strong> You sell scheduling software to a fictional five-person clinic. The clinic says appointment reminders are sent manually, the meeting is 20 minutes, and your goal is to learn whether an automated reminder pilot is useful.</p>
+<p><strong>Illustrative expected output, not an actual model run:</strong> Opening question: "How much staff time goes into reminders each week?" Talking point: "A small pilot could test automated reminders with one appointment type." Verification needed: "We do not yet know the clinic's cancellation rate." The brief should not claim that reminders will reduce cancellations.</p>
+<p><strong>Review check:</strong> Can you trace each factual statement to the supplied brief? Remove any assumed company history or fabricated metric before the meeting.</p>
 
-<h2>Summarizing a long document</h2>
-<p><code>Here is a [report/transcript/article]. I am [your role] and I need to understand [what matters to you specifically]. Give me: (1) the three most important points for someone in my position, (2) one thing I should act on, (3) one risk or concern I should be aware of.</code></p>
+<h2>2. Summarize a document for a decision</h2>
+<p>Paste an approved excerpt or public document. A useful summary distinguishes what the source says from what the model infers.</p>
+<p><code>I need to decide [decision] by [date]. I am [role] and the source below is [document type and date]. Using only the supplied text, give me: (1) three decision-relevant findings, each with a short quote or section reference, (2) one action the source supports, (3) unanswered questions, and (4) any numbers that require checking against the original. Separate source facts from your interpretation. If the text does not answer a question, write "not stated." Source: [approved excerpt]</code></p>
+<p><strong>Synthetic input example:</strong> A fictional supplier memo says delivery takes six weeks, an expedited option takes four weeks, and expedited pricing is not included. You need to decide whether to request a quote.</p>
+<p><strong>Illustrative expected output, not an actual model run:</strong> Source fact: "The memo lists six weeks for standard delivery and four weeks for expedited delivery." Unanswered question: "Expedited price is not stated." Suggested action: "Request the price before comparing options." A summary that makes up a surcharge fails the check.</p>
+<p><strong>Review check:</strong> Open the source and verify each quote, number, date, and suggested action. Do not use the summary as a substitute for reading high-stakes terms.</p>
 
-<h2>Writing a first draft</h2>
-<p><code>Write a first draft of [document type] for [audience]. The purpose is to [goal]. Key points to include: [bullet list]. Tone: [professional/conversational/persuasive]. Length: approximately [X] words. Do not include: [anything to avoid].</code></p>
+<h2>3. Draft a customer update</h2>
+<p>Use this when you already know what happened and what you can promise. Leave an unknown delivery date as an unknown.</p>
+<p><code>Draft a [email or message] to [audience role] about [situation]. Verified facts: [facts]. What we have done: [actions]. What remains unknown: [unknowns]. Next update we can commit to: [date or time]. Tone: direct, accountable, and calm. Keep it under [word limit] words. Lead with the impact, explain the next step, and include a clear contact option. Do not invent a resolution date, compensation, cause, or promise.</code></p>
+<p><strong>Illustrative expected output, not an actual model run:</strong> For a fictional delayed report with an unknown completion date, the message should say the report is delayed, explain the confirmed issue in plain language, and promise only the next update time supplied in the prompt.</p>
+<p><strong>Review check:</strong> Confirm the recipient, factual cause, promised action, and any date with the owner before sending. Remove language that sounds certain when the team is still investigating.</p>
 
-<h2>Evaluating a decision</h2>
-<p><code>I am considering [decision]. My goal is [goal]. Constraints: [list constraints]. Act as a thoughtful advisor who is skeptical of my instincts. Give me: (1) the three strongest reasons to proceed, (2) the three strongest reasons not to, (3) what additional information you would want before deciding, (4) your overall recommendation.</code></p>
+<h2>4. Compare two options without false precision</h2>
+<p>The model can organize trade-offs, but it cannot supply missing prices or decide your risk tolerance for you.</p>
+<p><code>Compare [option A] and [option B] for [business goal]. Use only these known facts: [facts with sources]. Criteria, in priority order: [criteria]. Constraints: [budget, deadline, policy]. Make a table with criterion, evidence for each option, and unknowns. Then give a conditional recommendation and the smallest next test that would reduce uncertainty. Do not assign numerical scores or estimate costs unless I supplied the numbers.</code></p>
+<p><strong>Synthetic input example:</strong> A fictional team can either run a two-week manual onboarding pilot or buy a tool. The pilot fits the current budget; the tool price and integration effort are unknown.</p>
+<p><strong>Illustrative expected output, not an actual model run:</strong> "Run the manual pilot first if learning about drop-off is the immediate goal. Request tool pricing and integration details before committing to the purchase." The output should not declare the tool cheaper without a quote.</p>
+<p><strong>Review check:</strong> Ask whether the recommendation changes if an unknown turns out differently. If it does, get that fact before deciding.</p>
 
-<h2>Giving feedback on writing</h2>
-<p><code>Review the following [document type] and give feedback from the perspective of [target audience]. Be direct. Tell me: (1) what is working, (2) what is unclear or weak, (3) the single most important change I should make.</code></p>
+<h2>5. Review a draft from the reader's point of view</h2>
+<p>Share a draft you are allowed to put into the tool. Ask for specific edits, then decide which ones fit your voice and facts.</p>
+<p><code>You are reviewing this [document type] for [reader role]. The reader needs to [reader goal]. My intended action is [desired next step]. Identify: (1) the clearest sentence, (2) the two places where the reader may hesitate or misunderstand, and (3) the single highest-impact edit. Rewrite only those passages in a [tone] voice, keeping every factual claim and number unchanged. Flag any claim that lacks support; do not add new evidence. Draft: [approved text]</code></p>
+<p><strong>Review check:</strong> Compare the rewrite against the original line by line. Make sure it did not change a number, create a new promise, or erase a necessary caveat.</p>
+
+<h2>Make the template your own</h2>
+<p>Start with one recurring task. Save the prompt, the source you gave it, the draft output, and the corrections you made. If the same mistake recurs, tighten the instruction or provide a better example. For a deeper explanation of role, task, context, and format, read <a href="/courses/prompting-for-professionals/the-four-part-prompt-structure">the four-part prompt structure</a>. For more tasks to practice on, browse <a href="/resources/ai-use-cases">AI use cases by role</a>.</p>
         `,
       },
     ],
@@ -649,23 +670,31 @@ export const COURSES: Course[] = [
         slug: 'ai-for-meetings',
         title: 'AI for Meetings: Before, During, and After',
         duration: '9 min',
-        summary: 'Use AI across the full meeting lifecycle to show up prepared and follow through faster.',
+        summary: 'Turn permitted meeting notes into checked decisions, action items, and a useful follow-up.',
         body: `
-<h2>Why meetings are such a good target</h2>
-<p>Meetings are high-stakes and time-consuming, but much of the surrounding work, prep, note-taking, and follow-up, is mechanical. AI can handle the mechanical parts without touching the parts that actually require you: the conversation, the judgment, the relationship.</p>
+<p>A good meeting follow-up makes the decisions, owners, and unresolved questions easy to check. AI can organize a rough note, but it cannot know what someone meant unless your source says so. Keep a human in charge of the final record.</p>
 
-<h2>Before: preparation that used to take an hour</h2>
-<p>Good pre-meeting prep has a predictable structure: understand who you are meeting, know what they care about, prepare your key points, and anticipate what they will push back on. AI can do most of that work in 2 minutes.</p>
-<p>The prompt: "I am meeting [name/role] from [company] to discuss [topic]. Here is what I know about them: [paste LinkedIn bio, recent posts, or a short description]. My goal for the meeting is [goal]. Give me: the 3 things they are most likely to care about, 3 questions I can ask that show I have done my homework, and 2 objections I should be ready for."</p>
-<p>Run this before every significant meeting. The quality of your conversations will visibly improve within a week.</p>
+<h2>Before: write down the purpose</h2>
+<p>Prepare one intended decision, the context attendees need, and two questions worth answering. If you use AI to draft an agenda, supply only verified context and ask it to flag assumptions. Keep private names or sensitive details out of an unapproved tool.</p>
+<p><code>I am preparing a [meeting type] for [roles]. The decision we need is [decision]. Verified context: [approved facts]. Constraints: [time and scope]. Draft a three-item agenda and two open questions. Do not invent facts about attendees or claim a decision has already been made. Mark any assumption as a question.</code></p>
 
-<h2>During: note-taking without distraction</h2>
-<p>Use a transcription tool such as Otter.ai or Fireflies to record the conversation (with permission). Let the tool handle the verbatim capture. Your job during the meeting is to be present, ask good questions, and notice things a transcript will miss.</p>
-<p>Do not try to take comprehensive notes manually and also be engaged at the same time. You will do both poorly.</p>
+<h2>During: capture the minimum useful record</h2>
+<p>Note decisions in the words used, proposed actions, named owners, stated deadlines, and open questions. Distinguish a suggestion from an agreement. A recording or transcript is optional: obtain any required consent and follow your organization's policy and applicable rules. If recording is not appropriate, take brief notes instead. Share notes with an AI tool only if your organization permits that data in that tool; otherwise use a de-identified version or keep the review manual.</p>
 
-<h2>After: follow-up in 5 minutes</h2>
-<p>Paste your transcript or rough notes and run this prompt: "Here are my notes from a meeting with [who] about [topic]. Summarize: (1) what was decided, (2) who is doing what and by when, (3) what I said I would follow up on, (4) any open questions or risks that came up. Format as a short email I can send to the attendees."</p>
-<p>Edit for accuracy, add anything the transcript missed, and send. The meeting follow-up that used to take 20 minutes now takes 3.</p>
+<h2>After: extract actions without guessing</h2>
+<p>Use this prompt with notes you are permitted to share. The source line beside each item makes checking much easier than a fluent but unsupported summary.</p>
+<p><code>Turn these approved meeting notes into a review draft. Return four sections: (1) decisions explicitly agreed, (2) action items with task, owner, due date, and the exact supporting note, (3) proposals that were not decided, and (4) open questions. Write "not stated" for any missing owner or deadline. Do not turn a proposal into a decision, infer a commitment, or invent a date. Then draft a short follow-up message asking attendees to correct the record. Notes: [paste permitted notes]</code></p>
+<p><strong>Synthetic input, with fictional people and project:</strong> "Project Cedar kickoff. Team agreed to run a pilot with five volunteer teammates next week. Amira agreed to draft the checklist by Friday. Leo will ask security whether test data is permitted; no date agreed. Budget for a wider rollout is undecided."</p>
+<p><strong>Illustrative expected output, not an actual model run:</strong> Decision: run a five-person pilot next week. Action: Amira, draft the checklist, Friday; supporting note: "Amira agreed to draft the checklist by Friday." Action: Leo, ask security about test data, due date not stated. Open question: budget for a wider rollout. The output must not claim that security approved the data or that rollout was agreed.</p>
+
+<h2>Check before you send</h2>
+<ul>
+  <li>Compare every decision and action with your original notes. Ask attendees to confirm anything ambiguous.</li>
+  <li>Check each name, deadline, number, and quoted line. Replace "not stated" only after an owner confirms it.</li>
+  <li>Remove private details from the follow-up if the recipients should not see them.</li>
+  <li>Send the revised record to the appropriate attendees and invite corrections. Treat the AI draft as a starting point, not the meeting's official account.</li>
+</ul>
+<p>For more reusable prompts, use the <a href="/courses/prompting-for-professionals/prompt-templates-for-business">business prompt templates</a>. If you want to build this into a daily routine, the <a href="/courses/ai-for-productivity/the-morning-briefing-workflow">morning briefing workflow</a> shows how to review outstanding actions.</p>
         `,
       },
       {
