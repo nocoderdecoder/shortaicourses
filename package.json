@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
-    "test:gtm": "node --test tests/gtm-strategy.cjs"
+    "test:gtm": "node --test tests/gtm-strategy.cjs",
+    "test:first-win": "node --test tests/ai-first-win.cjs"
   },
   "dependencies": {
     "@vercel/firewall": "^1.2.6",

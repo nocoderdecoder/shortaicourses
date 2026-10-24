@@ -3,8 +3,8 @@ import { COURSES } from '@/lib/courses'
 import { EmailForm } from './components/EmailForm'
 
 const STATS = [
-  { value: '4', label: 'Free courses' },
-  { value: '15', label: 'Lessons' },
+  { value: String(COURSES.length), label: 'Free courses' },
+  { value: String(COURSES.reduce((total, course) => total + course.lessons.length, 0)), label: 'Lessons' },
   { value: '< 40 min', label: 'Per course' },
   { value: '0', label: 'Coding required' },
 ]
@@ -76,12 +76,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* A short, hands-on starting point for business owners. */}
+      <section aria-labelledby="first-win-heading" className="border-b" style={{ borderColor: 'var(--border)', background: 'var(--accent-light)' }}>
+        <div className="max-w-5xl mx-auto px-6 py-10 sm:py-12 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+          <div className="min-w-0 flex-1">
+            <p className="text-xs font-bold mb-2" style={{ color: 'var(--accent)' }}>Free tool · About 3 minutes · No signup</p>
+            <h2 id="first-win-heading" className="text-2xl sm:text-3xl font-bold leading-tight mb-3" style={{ color: 'var(--text)' }}>
+              Find one useful way to try AI in your business
+            </h2>
+            <p className="text-base leading-relaxed" style={{ color: 'var(--text-muted)', maxWidth: '38rem' }}>
+              Tell us what you do and choose a task. Get one clear recommendation, then try a supervised first draft here.
+            </p>
+          </div>
+          <Link href="/tools/ai-first-win" className="inline-flex items-center justify-center self-start sm:self-center min-h-11 rounded-lg px-6 py-3 text-sm font-bold text-white no-underline" style={{ background: 'var(--accent)' }}>
+            Try AI First Win →
+          </Link>
+        </div>
+      </section>
+
       {/* Stats bar */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderLeft: '1px solid var(--border)' }}>
+          <div className="grid grid-cols-2 sm:grid-cols-4" style={{ borderLeft: '1px solid var(--border)' }}>
             {STATS.map((s) => (
-              <div key={s.label} style={{ padding: '20px 28px', borderRight: '1px solid var(--border)' }}>
+              <div key={s.label} className="min-w-0 px-4 py-5 sm:px-7" style={{ borderRight: '1px solid var(--border)' }}>
                 <p style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', marginBottom: '2px' }}>{s.value}</p>
                 <p style={{ fontSize: '12px', color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 500 }}>{s.label}</p>
               </div>

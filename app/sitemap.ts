@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://shortaicourses.com/resources/future-proof-your-career', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: 'https://shortaicourses.com/resources/chatgpt-vs-claude', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: 'https://shortaicourses.com/tools/gtm-strategy-lab', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: 'https://shortaicourses.com/tools/ai-first-win', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
     ...courseRoutes,
   ]
 }
