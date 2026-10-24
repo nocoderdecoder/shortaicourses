@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { COURSES } from '@/lib/courses'
+import { siteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Free AI Courses for Business Professionals',
   description: 'Browse free AI courses built for business professionals. Finish each in under 40 minutes. No coding, no jargon, no signup required.',
+  alternates: { canonical: siteUrl('/courses') },
 }
 
 const LEVEL_COLOR: Record<string, string> = {

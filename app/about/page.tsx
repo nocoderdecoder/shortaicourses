@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'About — Anshul Gupta, GTM Strategy at Google',
   description: 'Anshul Gupta is a GTM strategist at Google and Kellogg MBA who built Short AI Courses to give business professionals practical AI education that fits in a lunch break.',
+  alternates: { canonical: siteUrl('/about') },
 }
 
 export default function AboutPage() {

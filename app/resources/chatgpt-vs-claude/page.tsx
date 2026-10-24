@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'ChatGPT vs Claude for Business: A Practical Comparison',
   description: "A business professional's perspective on when to use ChatGPT, when to use Claude, and what each tool is actually better at.",
+  alternates: { canonical: siteUrl('/resources/chatgpt-vs-claude') },
 }
 
 export default function ChatGPTvsClaudePage() {

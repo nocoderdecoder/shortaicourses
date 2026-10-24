@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import { SITE_ORIGIN } from '@/lib/site'
 import './globals.css'
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     template: '%s | Short AI Courses',
   },
   description: 'Free, short AI courses for business professionals. Finish a full course in your lunch break. No jargon, no coding required. No signup needed.',
-  metadataBase: new URL('https://shortaicourses.com'),
+  metadataBase: new URL(SITE_ORIGIN),
   openGraph: {
     siteName: 'Short AI Courses',
     type: 'website',

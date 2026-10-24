@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { COURSES, getCourse } from '@/lib/courses'
+import { siteUrl } from '@/lib/site'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${course.title}: Free ${course.level} Course for Business Professionals`,
     description: `${course.description} Free, no signup required. Finish in ${course.totalDuration}.`,
+    alternates: { canonical: siteUrl(`/courses/${slug}`) },
   }
 }
 
@@ -52,8 +54,8 @@ export default async function CoursePage({ params }: Props) {
               '@context': 'https://schema.org',
               '@type': 'BreadcrumbList',
               itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Courses', item: 'https://shortaicourses.com/courses' },
-                { '@type': 'ListItem', position: 2, name: course.title, item: `https://shortaicourses.com/courses/${slug}` },
+                { '@type': 'ListItem', position: 1, name: 'Courses', item: siteUrl('/courses') },
+                { '@type': 'ListItem', position: 2, name: course.title, item: siteUrl(`/courses/${slug}`) },
               ],
             },
           ]),
