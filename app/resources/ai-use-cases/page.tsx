@@ -32,6 +32,10 @@ export default function AIUseCasesPage() {
         and review drafts before sending them. Tool access and limits depend on your account and workspace.
       </p>
 
+      <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '32px' }}>
+        Ready to try one? Start with the <Link href="/courses/prompting-for-professionals/prompt-templates-for-business" style={{ color: 'var(--accent)' }}>business prompt templates</Link>, which include copyable prompts, worked examples, and checks for the result.
+      </p>
+
       <Section title="Communication and Email">
         <UseCase
           title="First-draft emails"

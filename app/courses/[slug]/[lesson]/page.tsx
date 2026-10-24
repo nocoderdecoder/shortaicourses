@@ -215,7 +215,7 @@ export default async function LessonPage({ params }: Props) {
           ))}
         </aside>
 
-        {relatedResource && (
+        {relatedResource && relatedResource.href !== `/courses/${slug}/${lessonSlug}` && (
           <aside className="mt-8 border-t pt-7" style={{ borderColor: 'var(--border)' }}>
             <p className="text-sm font-bold mb-2" style={{ color: 'var(--text)' }}>Related guide</p>
             <p className="text-sm leading-relaxed mb-2" style={{ color: 'var(--text-muted)' }}>{relatedResource.description}</p>

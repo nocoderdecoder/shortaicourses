@@ -8,8 +8,8 @@ import { siteUrl } from '@/lib/site'
 export const metadata: Metadata = { alternates: { canonical: siteUrl('/') } }
 
 const STATS = [
-  { value: '4', label: 'Free courses' },
-  { value: '15', label: 'Lessons' },
+  { value: String(COURSES.length), label: 'Free courses' },
+  { value: String(COURSES.reduce((total, course) => total + course.lessons.length, 0)), label: 'Lessons' },
   { value: '< 40 min', label: 'Per course' },
   { value: '0', label: 'Coding required' },
 ]
