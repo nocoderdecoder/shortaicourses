@@ -311,22 +311,36 @@ export const COURSES: Course[] = [
     lessons: [
       {
         slug: 'ai-for-competitive-intelligence',
-        title: 'AI for Competitive Intelligence',
+        title: 'Build a Weekly Competitor Brief with AI',
         duration: '10 min',
-        summary: 'Build a competitive monitoring system that runs while you sleep.',
+        summary: 'Compare dated public sources, separate changes from guesses, and write a brief you can verify.',
         body: `
-<h2>Why traditional comp intel breaks down</h2>
-<p>Most competitive intelligence is manual, intermittent, and siloed. Someone checks a competitor's website once a quarter. Someone else reads their press releases. Nobody synthesizes it. By the time insight reaches decision-makers, it is stale.</p>
-<p>AI does not fix this by being smarter. It fixes it by being tireless. Automated pipelines can monitor dozens of competitor signals daily and surface only what changed.</p>
+<h2>Start with one question and two dated sources</h2>
+<p>A useful competitor brief answers a narrow question, such as “Did the Team plan's included features change?” You can make one manually each week without a scraper, paid monitoring tool, or access to private data. Save only public excerpts you are permitted to use, along with the page URL, capture date, region, currency, and billing period. If you cannot find an earlier version you trust, say “no verified comparison” instead of guessing what changed.</p>
+<p>AI can organize the excerpts and propose questions. It cannot know why another company made a change, whether customers are affected, or what the rest of the market is doing from one page. Keep those as unknowns until you find direct evidence.</p>
 
-<h2>What to monitor and how</h2>
-<p><strong>Pricing and packaging:</strong> Set up a simple scraper (no code required with Zapier and browser automation) that checks competitor pricing pages weekly and logs changes. Feed the differences to an LLM and ask it to explain what changed and what it signals about strategy.</p>
-<p><strong>Job postings:</strong> Competitor job posts are a leading indicator of strategic direction. A company suddenly hiring 10 machine learning engineers is building something. Use Perplexity or a job aggregator API to pull this data, then summarize it with an LLM weekly.</p>
-<p><strong>Content and messaging:</strong> Use AI to analyze competitor blog posts, case studies, and LinkedIn content. Ask: "What themes are they emphasizing? What customer problems are they highlighting? What is missing from their narrative that I could own?"</p>
+<h2>Worked example: a fictional packaging change</h2>
+<p>Northstar is a fictional software company. These two quotations are invented solely to practice the review. Both are labeled as US-dollar monthly prices for the same region and billing period:</p>
+<ul>
+  <li><strong>2 October 2026, saved pricing-page excerpt:</strong> “Team plan: $79/month for up to five seats. Scheduled reports included.”</li>
+  <li><strong>23 October 2026, current pricing-page excerpt:</strong> “Team plan: $79/month for up to five seats. Scheduled reports available on Plus.”</li>
+</ul>
+<p><strong>Observed:</strong> The displayed Team price and seat count stayed the same in these excerpts; the scheduled-reports wording changed. <strong>Possible interpretation:</strong> Northstar may be moving that feature to a higher tier. <strong>Unknown:</strong> the Plus price, when the change took effect, whether existing customers keep access, and the company's motive. Do not call this a price increase or a market trend.</p>
 
-<h2>Synthesizing into action</h2>
-<p>Raw intel is not strategy. The step most teams skip is synthesis. Once a week, paste your collected signals into an LLM with this prompt: "Here are this week's signals about [competitor]. Based on this, what do you think they are trying to do? What does that mean for us? What should we do differently?"</p>
-<p>The output will not be perfect, but it forces structured thinking that most teams never do at all.</p>
+<h2>Copy the weekly review prompt</h2>
+<p><code>Make a short competitor-change brief from the dated excerpts below. Separate: (1) observed changes with an exact supporting quotation and capture date, (2) plausible implications labeled as hypotheses, (3) facts still unknown, and (4) one next verification step. Do not infer motive, revenue, customer impact, or an industry trend. If the excerpts do not support a claim, say so. Fictional company: Northstar. Same US region and monthly billing basis in both captures. 2 October 2026: “Team plan: $79/month for up to five seats. Scheduled reports included.” 23 October 2026: “Team plan: $79/month for up to five seats. Scheduled reports available on Plus.”</code></p>
+<p><strong>A checked answer:</strong> “The later excerpt lists scheduled reports on Plus rather than included with Team; both excerpts display Team at $79/month for up to five seats. This may indicate a packaging change, but the snippets do not establish why it happened or which customers it affects. Check the current full plan terms and any dated announcement before updating a comparison sheet.” Reject an answer that says Northstar raised prices or that buyers are leaving: neither claim appears in the sources.</p>
+
+<h2>Reuse the brief without inventing evidence</h2>
+<p><code>Question: [one decision this brief will inform]
+Competitor and public page URL: [name and URL]
+Earlier capture: [date, region, currency/billing basis, exact excerpt or “not available”]
+Current capture: [date, same context, exact excerpt]
+Observed change with supporting quotations: [or “no verified comparison”]
+Hypothesis, clearly labeled: [or “none”]
+Unknowns and conflicting evidence: [list]
+Next check and owner: [specific step and person]</code></p>
+<p>Before sharing, open the current source, check that the two captures use the same region and billing basis, and remove any claim the quotations do not support. Keep the source ledger beside the brief so a colleague can repeat the check. For help refining the prompt's structure, use the <a href="/courses/prompting-for-professionals/prompt-templates-for-business">business prompt templates</a>.</p>
         `,
       },
       {

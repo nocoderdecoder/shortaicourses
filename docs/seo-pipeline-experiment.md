@@ -1,6 +1,6 @@
 # CRM pipeline workflow: one distribution experiment
 
-**Status:** Draft for owner review. Confirm the improved lesson is live before sharing its link. No post or outreach has been sent.
+**Status:** Inactive draft. The owner does not want external posting or sharing. No post or outreach has been sent; do not schedule this experiment.
 
 ## Why this page
 
