@@ -28,7 +28,7 @@ On **24 October 2026**, Search Console's first live URL test for `https://www.sh
 | 8 | Set up aggregate privacy-conscious visitor and conversion measurement once a free analytics property and ID are available. | Visits, course starts, lesson completions, and signup outcomes can be measured across visitors without relying on browser-local counters. |
 | 9 | Run one small distribution experiment for a genuinely useful published workflow. | A reviewed message, canonical tagged URL, distribution date, and observable referral/action result are recorded; see [the pipeline workflow experiment](seo-pipeline-experiment.md). |
 
-The worked business-prompt and meeting examples are in [PR #6](https://github.com/nocoderdecoder/shortaicourses/pull/6), awaiting review; they are not part of the live site. The pipeline lesson improvement is a separate review change. Items 6–9 need follow-up, measurement, content review, or distribution. A sitemap submission does not guarantee crawl, indexing, or ranking.
+The worked business-prompt and meeting examples were merged in [PR #6](https://github.com/nocoderdecoder/shortaicourses/pull/6). The pipeline lesson improvement is in [PR #7](https://github.com/nocoderdecoder/shortaicourses/pull/7). Items 6–9 still need follow-up, measurement, content review, or distribution. A sitemap submission does not guarantee crawl, indexing, or ranking.
 
 ## Repeatable work
 

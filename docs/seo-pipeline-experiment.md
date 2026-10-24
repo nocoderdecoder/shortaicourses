@@ -1,6 +1,6 @@
 # CRM pipeline workflow: one distribution experiment
 
-**Status:** Draft for review. The improved lesson must be merged and live before this link is shared. No post or outreach has been sent.
+**Status:** Draft for owner review. Confirm the improved lesson is live before sharing its link. No post or outreach has been sent.
 
 ## Why this page
 
@@ -36,4 +36,4 @@ Replace `[tagged link]` with the proposed tagged URL only after confirming the r
 
 ## Subsequent work
 
-The next experiment can use the worked business-prompt or meeting lesson in PR #6 after review and deployment. A weekly traffic report needs a privacy-conscious analytics property plus agreed event definitions for landing, lesson start, prompt copy, explicit completion, and signup outcome. A visit to a final lesson is not proof of course completion, and an email form display is not proof of a successful signup.
+The next experiment can use the worked business-prompt or meeting lesson added in PR #6. A weekly traffic report needs a privacy-conscious analytics property plus agreed event definitions for landing, lesson start, prompt copy, explicit completion, and signup outcome. A visit to a final lesson is not proof of course completion, and an email form display is not proof of a successful signup.
