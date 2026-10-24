@@ -158,7 +158,7 @@ export default async function LessonPage({ params }: Props) {
                   textAlign: 'right',
                 }}
               >
-                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Course complete!</span>
+                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>Last lesson</span>
                 <span style={{ fontSize: '13px', color: '#fff', fontWeight: 600 }}>Back to course →</span>
               </Link>
             )}
