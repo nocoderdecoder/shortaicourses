@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { COURSES, getCourse } from '@/lib/courses'
+import { getRelatedResource } from '@/lib/resources'
 import { siteUrl } from '@/lib/site'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -25,6 +26,7 @@ export default async function CoursePage({ params }: Props) {
   const { slug } = await params
   const course = getCourse(slug)
   if (!course) notFound()
+  const relatedResource = getRelatedResource(slug)
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-14">
@@ -159,6 +161,15 @@ export default async function CoursePage({ params }: Props) {
           ))}
         </div>
       </div>
+      {relatedResource && (
+        <aside className="mt-12 border-t pt-8" style={{ borderColor: 'var(--border)' }}>
+          <h2 className="text-lg font-bold mb-2" style={{ color: 'var(--text)' }}>Keep learning</h2>
+          <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-muted)' }}>{relatedResource.description}</p>
+          <Link href={relatedResource.href} className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>
+            {relatedResource.title} →
+          </Link>
+        </aside>
+      )}
     </div>
   )
 }

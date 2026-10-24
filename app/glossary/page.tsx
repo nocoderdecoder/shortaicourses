@@ -8,7 +8,14 @@ export const metadata: Metadata = {
   alternates: { canonical: siteUrl('/glossary') },
 }
 
-const TERMS = [
+type GlossaryTerm = {
+  term: string
+  definition: string
+  explanation: string
+  related?: { href: string; label: string }
+}
+
+const TERMS: GlossaryTerm[] = [
   {
     term: 'Agentic AI',
     definition: 'AI that takes sequences of actions on its own to complete a goal, rather than just answering a question.',
@@ -42,7 +49,8 @@ const TERMS = [
   {
     term: 'Hallucination',
     definition: 'When an AI model confidently states something that is false.',
-    explanation: `Models generate plausible text, and plausible is not the same as accurate. They will fabricate citations, invent statistics, and state wrong facts with complete confidence. This is not a bug that will be fully fixed — it is a property of how these models work. The practical implication: treat AI factual outputs as hypotheses to verify, especially for anything you will share externally or use to make decisions. <Link href="/courses/ai-foundations-for-business/how-llms-work-in-plain-english" style="color:var(--accent);text-decoration:none">See the lesson on how LLMs work</Link> for more on why this happens.`,
+    explanation: `Models generate plausible text, and plausible is not the same as accurate. They can fabricate citations, invent statistics, and state wrong facts with confidence. Treat AI factual outputs as claims to verify, especially for anything you will share externally or use to make decisions.`,
+    related: { href: '/courses/ai-foundations-for-business/how-llms-work-in-plain-english', label: 'Learn how LLMs work' },
   },
   {
     term: 'LLM (Large Language Model)',
@@ -52,12 +60,13 @@ const TERMS = [
   {
     term: 'Multimodal',
     definition: 'An AI model that can process multiple types of inputs — text, images, audio, or video — not just text alone.',
-    explanation: `GPT-4o and Claude are multimodal: you can show them a photo, a chart, a screenshot, or a diagram and ask questions about it. This matters practically because a lot of business information lives in visual formats: slide decks, dashboards, whiteboard photos, product screenshots. A multimodal model can read and reason about these without you having to transcribe them.`,
+    explanation: `Many current AI tools can work with images as well as text: you can show them a photo, a chart, a screenshot, or a diagram and ask questions about it. This matters because business information often lives in slide decks, dashboards, whiteboard photos, and product screenshots. Check the tool's supported inputs and verify its interpretation before relying on it.`,
   },
   {
     term: 'Prompt',
     definition: 'The input you give to an AI model — your question, instruction, or request.',
-    explanation: `The quality of a prompt directly determines the quality of the response. A vague prompt gets a vague answer; a specific, well-structured prompt gets a useful one. "Prompt engineering" is the skill of writing prompts that consistently get good outputs. <Link href="/courses/ai-foundations-for-business/how-to-prompt-well" style="color:var(--accent);text-decoration:none">The lesson on prompting</Link> covers the patterns that work best in practice.`,
+    explanation: `A clear prompt can improve a response by explaining the task, context, constraints, and desired format. A vague prompt often leaves the model to guess. "Prompt engineering" is the practice of shaping and testing instructions for a repeatable task.`,
+    related: { href: '/courses/prompting-for-professionals/the-four-part-prompt-structure', label: 'Try the four-part prompt lesson' },
   },
   {
     term: 'RAG (Retrieval-Augmented Generation)',
@@ -122,10 +131,10 @@ export default function GlossaryPage() {
             <p style={{ fontSize: '15px', fontWeight: 500, color: 'var(--text)', marginBottom: '8px', fontStyle: 'italic' }}>
               {item.definition}
             </p>
-            <p
-              style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.7 }}
-              dangerouslySetInnerHTML={{ __html: item.explanation }}
-            />
+            <p style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.7 }}>
+              {item.explanation}
+              {item.related && <>{' '}<Link href={item.related.href} style={{ color: 'var(--accent)' }}>{item.related.label} →</Link></>}
+            </p>
           </div>
         ))}
       </div>

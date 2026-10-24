@@ -49,6 +49,9 @@ function Nav() {
           <Link href="/courses" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
             All Courses
           </Link>
+          <Link href="/resources" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
+            Resources
+          </Link>
           <Link href="/tools/gtm-strategy-lab" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }}>GTM Lab</Link>
           <Link href="/about" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
             About
@@ -88,6 +91,7 @@ function Footer() {
         </div>
         <div className="flex gap-5">
           <Link href="/courses" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>Courses</Link>
+          <Link href="/resources" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>Resources</Link>
           <Link href="/about" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>About</Link>
           <a href="https://anshul.ai" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}>anshul.ai</a>
         </div>

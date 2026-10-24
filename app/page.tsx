@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { COURSES } from '@/lib/courses'
+import { RESOURCES } from '@/lib/resources'
 import { EmailForm } from './components/EmailForm'
 import { siteUrl } from '@/lib/site'
 
@@ -83,9 +84,9 @@ export default function Home() {
       {/* Stats bar */}
       <section style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderLeft: '1px solid var(--border)' }}>
+          <div className="grid grid-cols-2 sm:grid-cols-4" style={{ borderLeft: '1px solid var(--border)' }}>
             {STATS.map((s) => (
-              <div key={s.label} style={{ padding: '20px 28px', borderRight: '1px solid var(--border)' }}>
+              <div key={s.label} className="min-w-0 px-4 py-5 sm:px-7" style={{ borderRight: '1px solid var(--border)' }}>
                 <p style={{ fontSize: '22px', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', marginBottom: '2px' }}>{s.value}</p>
                 <p style={{ fontSize: '12px', color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 500 }}>{s.label}</p>
               </div>
@@ -149,6 +150,32 @@ export default function Home() {
                 <span style={{ fontSize: '12px', color: 'var(--text-faint)' }}>{course.lessonCount} lessons</span>
                 <span style={{ fontSize: '12px', color: 'var(--text-faint)' }}>{course.totalDuration}</span>
               </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Resources */}
+      <section className="max-w-5xl mx-auto px-6 pb-16" aria-labelledby="resources-heading">
+        <div className="flex flex-wrap items-baseline justify-between gap-3 mb-6">
+          <h2 id="resources-heading" className="text-xl font-bold" style={{ color: 'var(--text)' }}>
+            Explore practical guides
+          </h2>
+          <Link href="/resources" className="text-sm font-semibold no-underline" style={{ color: 'var(--accent)' }}>
+            All resources →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+          {RESOURCES.map(resource => (
+            <Link
+              key={resource.href}
+              href={resource.href}
+              className="block min-w-0 py-4 border-t no-underline focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ borderColor: 'var(--border)', outlineColor: 'var(--accent)' }}
+            >
+              <span className="block text-xs font-semibold mb-1" style={{ color: 'var(--accent)' }}>{resource.category}</span>
+              <span className="block text-base font-bold leading-snug mb-1" style={{ color: 'var(--text)' }}>{resource.title} →</span>
+              <span className="block text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>{resource.description}</span>
             </Link>
           ))}
         </div>

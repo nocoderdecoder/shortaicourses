@@ -27,6 +27,11 @@ export default function AIUseCasesPage() {
         Practical ways to use AI in the work you actually do. Organized by function, with tool recommendations for each.
       </p>
 
+      <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '32px' }}>
+        Treat these as starting workflows. Use information you are permitted to share, verify facts and calculations,
+        and review drafts before sending them. Tool access and limits depend on your account and workspace.
+      </p>
+
       <Section title="Communication and Email">
         <UseCase
           title="First-draft emails"
@@ -36,7 +41,7 @@ export default function AIUseCasesPage() {
         <UseCase
           title="Inbox triage and summarization"
           description="Paste a long email thread and ask for the key decision, current status, and any action items on your end."
-          tool="Claude (handles long threads well)"
+          tool="ChatGPT or Claude"
         />
         <UseCase
           title="Difficult message drafts"
@@ -88,13 +93,13 @@ export default function AIUseCasesPage() {
         />
         <UseCase
           title="Document Q&A"
-          description="Upload a report, contract, or policy; ask specific questions rather than reading the whole thing."
+          description="Upload a report, contract, or policy; ask specific questions with supporting passages, then check the relevant sections yourself."
           tool="Claude or ChatGPT"
         />
         <UseCase
           title="Synthesizing multiple sources"
           description="Paste notes or excerpts from several articles; ask for the key themes, disagreements, and what remains unclear."
-          tool="Claude (longer context)"
+          tool="ChatGPT or Claude"
         />
         <UseCase
           title="Survey and feedback analysis"
@@ -104,7 +109,7 @@ export default function AIUseCasesPage() {
         <UseCase
           title="Data analysis in browser"
           description="Upload a spreadsheet; ask for pivot tables, trend identification, or anomaly detection without writing code."
-          tool="ChatGPT (Code Interpreter)"
+          tool="ChatGPT or Claude with data analysis enabled"
         />
         <UseCase
           title="Decision frameworks"
@@ -161,8 +166,8 @@ export default function AIUseCasesPage() {
         />
         <UseCase
           title="Social media image generation"
-          description="Describe a concept or visual; get a clean illustration suitable for professional use."
-          tool="DALL-E via ChatGPT"
+          description="Describe a concept or visual; create an illustration draft, then check details and usage terms before publishing."
+          tool="ChatGPT image generation"
         />
         <UseCase
           title="Editing for clarity"
@@ -255,7 +260,7 @@ export default function AIUseCasesPage() {
         />
         <UseCase
           title="Job posting analysis"
-          description="Paste competitor job postings; ask what they reveal about organizational structure, priorities, and where they are investing."
+          description="Paste competitor job postings; ask what priorities they might suggest, separating direct evidence from hypotheses."
           tool="ChatGPT or Claude"
         />
         <UseCase
@@ -277,6 +282,16 @@ export default function AIUseCasesPage() {
           title="Vendor evaluation frameworks"
           description="Give the use case and what matters most; ask for an evaluation framework with criteria and how to weight them."
           tool="ChatGPT or Claude"
+        />
+        <UseCase
+          title="Standard operating procedure checks"
+          description="Provide an approved procedure and a draft checklist; ask for missing steps and ambiguous instructions, with references to the original. Have the process owner approve changes."
+          tool="ChatGPT or Claude"
+        />
+        <UseCase
+          title="Spreadsheet reconciliation"
+          description="Upload a non-sensitive export; ask for duplicate records, missing values, and totals by category. Compare counts and totals with the original before using the cleaned file."
+          tool="ChatGPT or Claude with data analysis enabled"
         />
         <UseCase
           title="Forecast sanity checks"
