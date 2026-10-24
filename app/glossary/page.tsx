@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'AI Glossary for Business Professionals',
   description: 'Plain-English definitions of the AI terms you hear most, and what they actually mean for your work.',
+  alternates: { canonical: siteUrl('/glossary') },
 }
 
 const TERMS = [
@@ -90,7 +92,7 @@ export default function GlossaryPage() {
             '@type': 'DefinedTermSet',
             name: 'AI Glossary for Business Professionals',
             description: 'Plain-English definitions of AI terms for business professionals.',
-            url: 'https://shortaicourses.com/glossary',
+            url: siteUrl('/glossary'),
           }),
         }}
       />
