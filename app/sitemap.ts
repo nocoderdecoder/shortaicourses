@@ -1,30 +1,25 @@
 import { COURSES } from '@/lib/courses'
-import { MetadataRoute } from 'next'
+import { siteUrl } from '@/lib/site'
+import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const courseRoutes = COURSES.flatMap(course => [
-    {
-      url: `https://shortaicourses.com/courses/${course.slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: siteUrl('/'), changeFrequency: 'weekly', priority: 1 },
+    { url: siteUrl('/courses'), changeFrequency: 'weekly', priority: 0.9 },
+    { url: siteUrl('/about'), changeFrequency: 'monthly', priority: 0.5 },
+    { url: siteUrl('/glossary'), changeFrequency: 'monthly', priority: 0.7 },
+    { url: siteUrl('/resources/ai-use-cases'), changeFrequency: 'monthly', priority: 0.7 },
+    { url: siteUrl('/resources/future-proof-your-career'), changeFrequency: 'monthly', priority: 0.6 },
+    { url: siteUrl('/resources/chatgpt-vs-claude'), changeFrequency: 'monthly', priority: 0.6 },
+    { url: siteUrl('/tools/gtm-strategy-lab'), changeFrequency: 'monthly', priority: 0.6 },
+  ]
+  const courseRoutes: MetadataRoute.Sitemap = COURSES.flatMap(course => [
+    { url: siteUrl(`/courses/${course.slug}`), changeFrequency: 'weekly', priority: 0.8 },
     ...course.lessons.map(lesson => ({
-      url: `https://shortaicourses.com/courses/${course.slug}/${lesson.slug}`,
-      lastModified: new Date(),
+      url: siteUrl(`/courses/${course.slug}/${lesson.slug}`),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
   ])
-  return [
-    { url: 'https://shortaicourses.com', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 1 },
-    { url: 'https://shortaicourses.com/courses', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: 'https://shortaicourses.com/about', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
-    { url: 'https://shortaicourses.com/glossary', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: 'https://shortaicourses.com/resources/ai-use-cases', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: 'https://shortaicourses.com/resources/future-proof-your-career', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: 'https://shortaicourses.com/resources/chatgpt-vs-claude', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: 'https://shortaicourses.com/tools/gtm-strategy-lab', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-    ...courseRoutes,
-  ]
+  return [...staticRoutes, ...courseRoutes]
 }

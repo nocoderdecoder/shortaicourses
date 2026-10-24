@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { COURSES } from '@/lib/courses'
 import { EmailForm } from './components/EmailForm'
+import { siteUrl } from '@/lib/site'
+
+export const metadata: Metadata = { alternates: { canonical: siteUrl('/') } }
 
 const STATS = [
   { value: '4', label: 'Free courses' },

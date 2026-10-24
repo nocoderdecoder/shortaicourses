@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: '50 AI Use Cases for Business Professionals',
   description: 'Practical ways to use AI in the work you actually do. Organized by function, with tool recommendations for each.',
+  alternates: { canonical: siteUrl('/resources/ai-use-cases') },
 }
 
 export default function AIUseCasesPage() {

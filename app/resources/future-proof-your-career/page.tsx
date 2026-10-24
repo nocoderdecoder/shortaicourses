@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'How to Future-Proof Your Career with AI',
   description: 'A clear-eyed look at what AI is actually displacing, what it is not, and what to do about it.',
+  alternates: { canonical: siteUrl('/resources/future-proof-your-career') },
 }
 
 export default function FutureProofCareerPage() {
