@@ -589,21 +589,35 @@ export const COURSES: Course[] = [
       },
       {
         slug: 'ai-for-pipeline-and-forecasting',
-        title: 'AI for Pipeline Management and Forecasting',
+        title: 'Review a CRM Pipeline Forecast with AI',
         duration: '8 min',
-        summary: 'Keep your CRM cleaner and your forecasts more honest with less manual work.',
+        summary: 'Use a safe CRM export to find missing deal evidence before you submit a forecast.',
         body: `
-<h2>The CRM problem AI solves</h2>
-<p>CRMs are only as good as the data in them, and sales reps do not like entering data. The result: stale records, missing context, and forecasts built on incomplete information. AI does not solve the willingness problem, but it reduces the friction enough that more data actually gets captured.</p>
+<h2>Start with evidence, not an AI-generated number</h2>
+<p>A CRM export can show deal amounts and close dates without showing whether a buyer has agreed to the next step. AI is useful for spotting missing evidence and drafting review questions. It cannot turn an incomplete pipeline into a reliable revenue forecast.</p>
+<p>Use an approved AI workspace and only data your organization permits you to share. For a first attempt, use the fictional example below. For a real review, remove names, contact details, private notes, and any other restricted fields. Keep the source CRM as the record you check before making a decision.</p>
 
-<h2>CRM updates from call notes</h2>
-<p>In an approved AI workspace, provide only notes you are permitted to share and ask: "Summarize this as a CRM note. Include: (1) what was discussed, (2) the prospect's stated situation, (3) timing and budget if mentioned, (4) agreed next steps with owners and dates, (5) risks or concerns." Check the output against your notes before adding it to the CRM.</p>
+<h2>A three-deal example you can check by hand</h2>
+<p>Assume this fictional pipeline was reviewed on 24 October 2026. All three deals have a 30 November target close date:</p>
+<ul>
+  <li><strong>Deal A — $40,000, proposal:</strong> 9 days in stage; buyer interaction 2 days ago; a review call is agreed for 28 October.</li>
+  <li><strong>Deal B — $30,000, negotiation:</strong> 45 days in stage; last buyer interaction 31 days ago; no agreed next-step date is recorded.</li>
+  <li><strong>Deal C — $20,000, discovery:</strong> 3 days in stage; buyer interaction yesterday; the economic buyer is not yet identified.</li>
+</ul>
+<p>The gross pipeline is <strong>$90,000</strong> ($40,000 + $30,000 + $20,000). That is a sum of open opportunities, <strong>not</strong> a $90,000 forecast. The data does not include calibrated win rates or enough buyer evidence to estimate expected revenue or which deals will close in November.</p>
 
-<h2>Pipeline review prompts</h2>
-<p>Use a synthetic or approved, de-identified pipeline export and ask: "Which deals appear most at risk? Which have been in the current stage longest? What does the overall mix suggest I should examine this week?" Verify every flagged deal against the CRM before acting.</p>
+<h2>Copy the pipeline-review prompt</h2>
+<p><code>You are helping me review a fictional CRM pipeline, not predict revenue. Review date: 24 October 2026. Target close date for every deal: 30 November 2026. Deal A: $40,000, proposal, 9 days in stage, buyer interaction 2 days ago, review call agreed for 28 October. Deal B: $30,000, negotiation, 45 days in stage, buyer interaction 31 days ago, no agreed next-step date recorded. Deal C: $20,000, discovery, 3 days in stage, buyer interaction yesterday, economic buyer not identified. Return: (1) the gross pipeline total with arithmetic, (2) one evidence gap and one question for the owner of each deal, and (3) which records to check in the CRM. Distinguish recorded facts from hypotheses. Do not invent buyer intent, win probabilities, close confidence, or a revenue forecast. If a field is missing, write "not recorded."</code></p>
+<p><strong>What a useful draft should flag:</strong> A has a review call scheduled, so check the result and purchase step afterward; B needs a fresh buyer-confirmed next action before its November close date is trusted; C needs an identified decision process. The model should calculate $90,000 correctly and stop there. A longer answer with made-up probabilities is worse.</p>
 
-<h2>Forecast sanity checks</h2>
-<p>Before submitting your forecast, describe a de-identified set of committed deals in an approved workspace and ask: "What could keep each deal from closing on time? What evidence would make this forecast more credible?" Use the questions to challenge your assumptions, then rely on your CRM evidence and your team's judgment for the final number.</p>
+<h2>Turn the draft into a forecast review</h2>
+<ol>
+  <li>Open each CRM record and verify the amount, stage, target date, last buyer interaction, and agreed next step. Fix stale or missing fields with the deal owner.</li>
+  <li>Ask the owner of B whether the buyer has confirmed any next action. Ask C who approves the purchase. For A, check the result of the scheduled review call when it occurs.</li>
+  <li>Apply your team's documented forecast categories and historical calibration, if available. Do not treat stage labels or an AI confidence score as a substitute for that evidence.</li>
+  <li>Record what changed, who verified it, and what remains uncertain before you submit the forecast.</li>
+</ol>
+<p>For another reusable business task, try the <a href="/courses/prompting-for-professionals/prompt-templates-for-business">business prompt templates</a>. If you use meeting notes to update CRM records, the <a href="/courses/ai-for-productivity/ai-for-meetings">meeting follow-up workflow</a> shows how to check decisions and owners before sharing them.</p>
         `,
       },
     ],
