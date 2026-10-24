@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: siteUrl('/resources/future-proof-your-career'), changeFrequency: 'monthly', priority: 0.6 },
     { url: siteUrl('/resources/chatgpt-vs-claude'), changeFrequency: 'monthly', priority: 0.6 },
     { url: siteUrl('/tools/gtm-strategy-lab'), changeFrequency: 'monthly', priority: 0.6 },
+    { url: siteUrl('/tools/ai-first-win'), changeFrequency: 'monthly', priority: 0.7 },
   ]
   const courseRoutes: MetadataRoute.Sitemap = COURSES.flatMap(course => [
     { url: siteUrl(`/courses/${course.slug}`), changeFrequency: 'weekly', priority: 0.8 },

@@ -49,6 +49,7 @@ function Nav() {
           <Link href="/courses" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
             All Courses
           </Link>
+          <Link href="/tools/ai-first-win" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }}>AI First Win</Link>
           <Link href="/tools/gtm-strategy-lab" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }}>GTM Lab</Link>
           <Link href="/about" style={{ fontSize: '14px', color: 'var(--text-muted)', textDecoration: 'none' }} className="hover:opacity-70 transition-opacity">
             About
