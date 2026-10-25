@@ -87,8 +87,10 @@ export default function AIUseCasesPage() {
       <Section title="Research and Analysis">
         <UseCase
           title="Competitive research"
-          description="Search for recent news, product updates, and positioning on a competitor; get a structured briefing."
-          tool="Perplexity"
+          description="Compare dated public sources and separate observed changes from possible implications."
+          tool="ChatGPT or Claude"
+          href="/courses/ai-for-marketing-and-gtm/ai-for-competitive-intelligence"
+          linkLabel="Build a checked competitor brief"
         />
         <UseCase
           title="Industry news digests"
@@ -299,8 +301,10 @@ export default function AIUseCasesPage() {
         />
         <UseCase
           title="Forecast sanity checks"
-          description="Describe your committed pipeline; ask for the reasons each deal might not close on time."
+          description="Check the evidence behind open deals before treating pipeline value as a forecast."
           tool="ChatGPT or Claude"
+          href="/courses/ai-for-sales/ai-for-pipeline-and-forecasting"
+          linkLabel="Try the CRM pipeline example"
         />
       </Section>
 
@@ -378,13 +382,18 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   )
 }
 
-function UseCase({ title, description, tool }: { title: string; description: string; tool: string }) {
+function UseCase({ title, description, tool, href, linkLabel }: { title: string; description: string; tool: string; href?: string; linkLabel?: string }) {
   return (
     <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
       <div style={{ flex: 1 }}>
         <span style={{ fontWeight: 600, color: 'var(--text)', fontSize: '15px' }}>{title}</span>
         <span style={{ color: 'var(--text-muted)', fontSize: '15px' }}> — {description}</span>
         <span style={{ fontSize: '13px', color: 'var(--text-faint)', marginLeft: '6px' }}>({tool})</span>
+        {href && linkLabel && (
+          <Link href={href} className="block w-fit mt-1 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2" style={{ color: 'var(--accent)', outlineColor: 'var(--accent)' }}>
+            {linkLabel} →
+          </Link>
+        )}
       </div>
     </div>
   )

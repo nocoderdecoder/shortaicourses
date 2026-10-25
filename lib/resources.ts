@@ -12,6 +12,18 @@ export const RESOURCES = [
     category: 'Workflow template',
   },
   {
+    href: '/courses/ai-for-sales/ai-for-pipeline-and-forecasting',
+    title: 'CRM pipeline review with AI',
+    description: 'Work through three fictional deals and check the evidence behind a forecast.',
+    category: 'Sales workflow',
+  },
+  {
+    href: '/courses/ai-for-marketing-and-gtm/ai-for-competitive-intelligence',
+    title: 'Weekly competitor brief',
+    description: 'Compare dated public sources and keep observed changes separate from guesses.',
+    category: 'Research workflow',
+  },
+  {
     href: '/resources/ai-use-cases',
     title: 'AI use cases for business',
     description: 'Find practical ways to use AI across common work tasks.',
