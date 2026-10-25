@@ -37,6 +37,18 @@ export default function ResourcesPage() {
           </Link>
         ))}
       </div>
+      <section className="mt-12 border-t pt-8" style={{ borderColor: 'var(--border)' }} aria-labelledby="sales-path-heading">
+        <h2 id="sales-path-heading" className="text-xl font-bold mb-2" style={{ color: 'var(--text)' }}>A practical path for sales professionals</h2>
+        <p className="text-sm sm:text-base leading-relaxed max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+          Work through a public-source account brief, a carefully checked outreach draft, and a CRM pipeline review. Each lesson is free and available without signing up.
+        </p>
+        <ol className="mt-5 list-decimal pl-5 space-y-3 text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+          <li><Link href="/courses/ai-for-sales/ai-for-prospect-research" className="font-semibold" style={{ color: 'var(--accent)' }}>Build a source-checked prospect brief</Link> from one dated company fact.</li>
+          <li><Link href="/courses/ai-for-sales/ai-for-outreach-and-prospecting" className="font-semibold" style={{ color: 'var(--accent)' }}>Draft sales outreach with AI</Link> and review every claim before sending.</li>
+          <li><Link href="/courses/ai-for-sales/ai-for-pipeline-and-forecasting" className="font-semibold" style={{ color: 'var(--accent)' }}>Review a fictional CRM pipeline</Link> without inventing a revenue forecast.</li>
+        </ol>
+        <Link href="/courses/ai-for-sales" className="inline-block mt-5 text-sm font-semibold" style={{ color: 'var(--accent)' }}>See the full free AI for Sales course →</Link>
+      </section>
       <p className="mt-10 text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
         Prefer to learn step by step? <Link href="/courses" className="font-semibold" style={{ color: 'var(--accent)' }}>Browse the free courses</Link>.
       </p>
