@@ -16,8 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = getCourse(slug)
   if (!course) return {}
   return {
-    title: `${course.title}: Free ${course.level} Course for Business Professionals`,
-    description: `${course.description} Free, no signup required. Finish in ${course.totalDuration}.`,
+    title: slug === 'ai-for-sales'
+      ? 'Free AI Course for Sales Professionals'
+      : `${course.title}: Free ${course.level} Course for Business Professionals`,
+    description: slug === 'ai-for-sales'
+      ? course.description
+      : `${course.description} Free, no signup required. Finish in ${course.totalDuration}.`,
     alternates: { canonical: siteUrl(`/courses/${slug}`) },
   }
 }
@@ -108,6 +112,17 @@ export default async function CoursePage({ params }: Props) {
         </Link>
       </div>
 
+      {course.outcomes && (
+        <section className="mb-12" aria-labelledby="course-outcomes-heading">
+          <h2 id="course-outcomes-heading" className="text-lg font-bold mb-3" style={{ color: 'var(--text)' }}>
+            What you will practice
+          </h2>
+          <ul className="list-disc pl-5 space-y-2 text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+            {course.outcomes.map(outcome => <li key={outcome}>{outcome}</li>)}
+          </ul>
+        </section>
+      )}
+
       {/* Lessons list */}
       <div>
         <h2 style={{ fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-faint)', marginBottom: '16px' }}>
@@ -146,7 +161,7 @@ export default async function CoursePage({ params }: Props) {
               }}>
                 {i + 1}
               </span>
-              <div style={{ flex: 1 }}>
+              <div style={{ flex: 1, minWidth: 0 }}>
                 <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--text)', marginBottom: '2px' }}>
                   {lesson.title}
                 </p>

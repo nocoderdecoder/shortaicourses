@@ -106,7 +106,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: '16px' }}>
           {COURSES.map((course) => (
             <Link
               key={course.slug}
@@ -153,6 +153,9 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        <p className="mt-6 text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+          Want to try one task first? Read the <Link href="/courses/ai-for-sales/ai-for-outreach-and-prospecting" className="font-semibold" style={{ color: 'var(--accent)' }}>source-checked sales outreach lesson</Link> without signing up.
+        </p>
       </section>
 
       {/* Resources */}

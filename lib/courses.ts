@@ -26,6 +26,7 @@ export type Course = {
   lessonCount: number
   level: 'Beginner' | 'Intermediate' | 'Advanced'
   category: string
+  outcomes?: string[]
   lessons: Lesson[]
 }
 
@@ -534,52 +535,76 @@ Next check and owner: [specific step and person]</code></p>
   {
     slug: 'ai-for-sales',
     title: 'AI for Sales Professionals',
-    tagline: 'Use AI across the full sales cycle without losing the human element that closes deals.',
-    description: 'A practical guide to using AI in prospecting, research, outreach, objection handling, and pipeline management — without turning your sales process into something that feels automated and impersonal.',
+    tagline: 'Practice source-checked prospecting, careful outreach, deal reviews, and CRM pipeline checks.',
+    description: 'Four short, free lessons for sales professionals: research an account, draft outreach from verified facts, review objections, and check the evidence behind a CRM forecast. No signup required.',
     totalDuration: '34 min',
     lessonCount: 4,
     level: 'Intermediate',
     category: 'Business Functions',
+    outcomes: [
+      'Build a prospect brief from dated public facts and open questions.',
+      'Draft outreach from verified evidence, then check claims before sending.',
+      'Review deal risks and identify missing CRM evidence without inventing a forecast.',
+    ],
     lessons: [
       {
         slug: 'ai-for-prospect-research',
-        title: 'AI for Prospect Research',
+        title: 'Build a Source-Checked Prospect Brief with AI',
         duration: '8 min',
-        summary: 'Build a complete picture of any prospect in 5 minutes instead of 45.',
+        summary: 'Turn dated public company facts into discovery questions without inventing buyer intent.',
         body: `
-<h2>The research problem in sales</h2>
-<p>Good sales conversations require context: who you're talking to, what their company is doing, what pressures they're under, and what they care about. Gathering that context manually takes 30-45 minutes per prospect and often still misses things. AI compresses that to 5 minutes and often surfaces angles you would not have found.</p>
+<h2>Collect a small set of dated public facts</h2>
+<p>Start with the decision you are preparing for: an introductory call, account review, or follow-up. Open the company's own public pages and save the URL, capture date, and exact relevant line. A press release or product page may tell you what the company announced; it cannot tell you a buyer's budget, priorities, or private problems. Keep those as questions. Use a company-approved AI workspace, and do not paste personal contact details or private CRM notes unless your organization permits it.</p>
 
-<h2>The pre-call research prompt</h2>
-<p>Before any significant sales call, run this: "I'm meeting [name], [title] at [company] in [X] days. Here's what I know about them: [paste LinkedIn bio or brief description]. My product does [X]. Give me: (1) what they likely care about most in their role, (2) 3 intelligent questions I can ask that show I understand their business, (3) the business pressures their company is probably under right now, (4) any likely objections to [your product category]."</p>
-<p>Use Perplexity for the company context first — recent news, earnings calls if public, any press releases. Paste that into ChatGPT along with the LinkedIn profile. The combination of recent news plus role context produces prep that used to take an hour.</p>
+<h2>Worked example: one fictional update</h2>
+<p>Blue Harbor Software and QueueBrief are fictional. On 20 October 2026, Blue Harbor's invented public update says, “We expanded customer support coverage to the EU region.” QueueBrief's invented seller brief says it turns approved support handoff notes into shift summaries. The update establishes a coverage expansion. It does not establish a handoff problem or interest in QueueBrief.</p>
+<p>A useful pre-call question would be, “How do teams coordinate handoffs across coverage regions today?” An unsupported claim would be, “Your EU expansion is creating handoff delays.” The source contains no delay data.</p>
 
-<h2>Researching the account, not just the contact</h2>
-<p>One person rarely buys. Ask ChatGPT: "For a [company size] company in [industry] buying [your product category], who are typically the stakeholders involved in the decision? What does each one care about most?" Then research each stakeholder separately. Walking into a deal knowing what the CFO, the IT lead, and the end user each want — before they're in the room — is a significant edge.</p>
+<h2>Copy the account-brief prompt</h2>
+<p><code>Create a short pre-call brief using only the source material below. Return (1) observed company facts with exact quotations and capture dates, (2) possible relevance to our product labeled as hypotheses, (3) facts still unknown, and (4) three open discovery questions. Do not invent a buyer's priorities, budget, technology stack, or problems. If there is too little evidence, say so. Fictional public source, captured 20 October 2026: Blue Harbor Software said, “We expanded customer support coverage to the EU region.” Fictional product fact: QueueBrief turns approved support handoff notes into shift summaries.</code></p>
+<p><strong>Check the draft:</strong> It may repeat the coverage expansion as an observed fact and ask how handoffs are coordinated. It must not assert that handoffs are failing, that EU support is understaffed, or that a purchase is planned. Remove unsupported claims before the brief goes into a CRM or call plan.</p>
 
-<h2>Monitoring accounts for trigger events</h2>
-<p>Use Perplexity to set up ongoing searches for key accounts. Leadership changes, funding rounds, new product launches, regulatory changes in their industry — these are trigger events that create buying opportunities. A company that just raised a Series B is actively spending. A company that just appointed a new CTO is reassessing its tech stack. Know before you call.</p>
+<h2>Keep the source ledger with the brief</h2>
+<p><code>Research question: [decision or call to prepare]
+Public source URL and capture date: [link and date]
+Exact source quotation: [text]
+Observed fact: [what this proves]
+Possible relevance: [hypothesis to test]
+Unknowns: [what the source cannot tell us]
+Discovery question: [open question for the buyer]
+Human reviewer and date: [name and date]</code></p>
+<p>Reopen the source before using the brief; public pages can change. A funding announcement, hiring post, or leadership change may suggest a question to ask, but it does not prove a buying event. When you have a verified fact and a product statement, the next lesson shows how to turn them into <a href="/courses/ai-for-sales/ai-for-outreach-and-prospecting">evidence-based outreach</a> without pretending to know the buyer's needs.</p>
         `,
       },
       {
         slug: 'ai-for-outreach-and-prospecting',
-        title: 'AI for Outreach and Prospecting',
+        title: 'Write Evidence-Based Sales Outreach with AI',
         duration: '9 min',
-        summary: 'Write outreach that gets responses, at scale, without sounding like a template.',
+        summary: 'Turn one verified public fact into a careful draft, then check every claim before sending.',
         body: `
-<h2>Why most AI-generated outreach fails</h2>
-<p>The promise of AI-generated outreach is personalization at scale. The reality, for most teams, is generic messages that feel like templates because the AI had no real information about the recipient. "I noticed your company is growing fast" is not personalization. It is the illusion of it.</p>
-<p>AI generates good outreach when you give it real, specific information. The input quality determines the output quality. Garbage in, garbage out is never more true than in sales emails.</p>
+<h2>Start with a source, not a guess about the buyer</h2>
+<p>A useful first-touch message can begin with one relevant, verifiable fact. Save the public page URL, date, and exact line you intend to reference. Separately record a fact about your own product that you can substantiate. Do not turn a company announcement into a claim about a person's priorities, budget, or pain. If you cannot verify a meaningful connection, skip the personalized opening rather than invent one.</p>
+<p>Use an AI workspace approved by your organization. Keep personal contact details, private account notes, and confidential deal information out of the prompt unless your policy permits them. A draft is a starting point for a human seller, not permission to send or automate a sequence.</p>
 
-<h2>The right input for outreach generation</h2>
-<p>For each prospect, gather at minimum: their recent LinkedIn activity or posts, one piece of recent company news, and the specific business problem you believe they have. Then prompt: "Write a 3-sentence cold email to [name] at [company]. Context: [what you know about them]. The email should reference [specific thing] and connect it to [the problem we solve]. End with a low-friction ask — a 15-minute call, not a demo. No subject line yet."</p>
-<p>Then ask: "Now write 3 subject line options. Short, specific, no hype."</p>
+<h2>Worked example: a fictional account and product</h2>
+<p>Everything in this example is invented for practice. A fictional company, Blue Harbor Software, published this dated line on 20 October 2026: “We expanded customer support coverage to the EU region.” The fictional seller's product, QueueBrief, turns approved support handoff notes into shift summaries. Those are the only source and product facts available.</p>
+<p><strong>Observed:</strong> Blue Harbor says it expanded EU support coverage. <strong>Possible relevance:</strong> a team with more coverage may need to review handoffs, but this has not been established. <strong>Unknown:</strong> whether Blue Harbor has any handoff problem, uses an existing tool, or wants to hear from this seller. The draft must not claim those things.</p>
 
-<h2>Follow-up sequences</h2>
-<p>If a follow-up is appropriate, AI can help you plan a short sequence: "Write a 3-email follow-up sequence for someone who received the first email but did not respond. Each email should add new value, be shorter than the previous, and shift the framing slightly." Review the sequence against your outreach policy before sending it.</p>
+<h2>Copy the source-led outreach prompt</h2>
+<p><code>Draft a first-touch B2B email of no more than 90 words. Use only the verified public fact and the seller product fact below. Label any connection between them as a question or possibility, not a proven problem. Do not invent a relationship, metric, budget, urgency, customer outcome, or personal detail. Offer one small, optional next step. Return the draft, then list every factual claim with the source that supports it and any claim that still needs verification. Public fact (fictional): Blue Harbor Software said on 20 October 2026, “We expanded customer support coverage to the EU region.” Product fact (fictional): QueueBrief turns approved support handoff notes into shift summaries. Recipient name and contact details are intentionally omitted.</code></p>
+<p><strong>A checked sample draft:</strong> “Hello, I saw Blue Harbor's update about expanding EU support coverage. QueueBrief turns approved support handoff notes into shift summaries. If reviewing handoffs across coverage areas is a priority, would a one-page example be useful? If not, no need to respond.” The first sentence is supported by the fictional public update; the second by the fictional seller brief. The question does not assert that Blue Harbor has a handoff problem. Do not reuse this example as a real claim.</p>
 
-<h2>A/B testing your messages</h2>
-<p>Give ChatGPT your best-performing message and ask: "Generate 3 variants that test different opening hooks, while keeping the core value proposition the same." Run the variants in your sequencing tool and let performance data tell you what's working. Iterate from results, not from opinions.</p>
+<h2>Copy the evidence and review worksheet</h2>
+<p><code>Company and public source URL: [link]
+Source capture date and exact quotation: [date and text]
+What the quotation actually establishes: [observed fact]
+Why it might be relevant: [hypothesis, not a fact]
+Seller product claim and source: [approved, verifiable statement]
+Draft claim to remove or verify: [unsupported wording]
+Recipient and channel permitted by our policy: [yes/no/unknown]
+Required opt-out or other review: [status]
+Human review decision: [send, revise, or do not send]</code></p>
+<p>Before any real message, open the source again, check the product statement against current approved material, and remove wording that outruns the evidence. Follow your organization's outreach rules and applicable requirements for the recipient and channel. If permission or an opt-out requirement is unclear, pause the send and ask the responsible team. For a broader account brief, start with <a href="/courses/ai-for-sales/ai-for-prospect-research">prospect research</a>; for a later-stage deal, use the <a href="/courses/ai-for-sales/ai-for-pipeline-and-forecasting">CRM pipeline review</a>.</p>
         `,
       },
       {
