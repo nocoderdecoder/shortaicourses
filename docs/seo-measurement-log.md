@@ -38,13 +38,20 @@ Every Monday, capture the latest complete 28-day Search Console period and the s
 | Check date | Complete 28-day period | Site clicks / impressions / CTR | Sales course clicks / impressions | Priority URL state | Release or change since prior check | Decision |
 | --- | --- | --- | --- | --- | --- | --- |
 | 25 Oct 2026 | 26 Sep–23 Oct 2026 | 0 / 31 / 0% | 0 / 9 | Meeting lesson, Resources, and GTM Lab indexed; sales pages to inspect next | Earlier technical and content releases fell after this reporting period | Baseline; no lift conclusion yet |
+| 3 Nov 2026 | 5 Oct–1 Nov 2026 | 1 / 48 / 2.1% | 0 / 9 | Sales course, prospect lesson, outreach lesson, Resources, and GTM Lab individually indexed | PR #8 and PR #9 deployed 25 Oct, inside this 28-day period | First recorded search click was on the marketing course. Keep monitoring; sample is too small and mixed-period for a release-impact claim. |
+
+For the **prior comparable 28 days, 7 September–4 October**, Search Console reported 0 clicks, 8 impressions, 0% CTR, and average position 49.9. For 5 October–1 November it reported average position 28.3. The site and its indexing were still changing across both windows, so these figures do not isolate the effect of the 25 October releases. In the latest period, the query `free ai courses for sales professionals` had 9 impressions and `ai short courses` had 5; neither showed a click in the visible query table. The sales course had 9 impressions and 0 clicks. The marketing course recorded the site's one click, on one impression. Query-level rows do not account for all site impressions.
+
+Individual URL inspections on 3 November showed all five priority `www` pages indexed. The sales course was last crawled on 28 October with a successful smartphone fetch and matching selected canonical. The prospect and outreach lessons were last crawled on 23 September, before their 25 October rewrites; both had successful older fetches and Google selected the inspected URLs. The current live lesson pages load and declare their own `www` canonicals. The outreach lesson also passed Search Console's live URL test on 3 November. Resources and GTM Lab remained indexed with successful 24 October smartphone crawls and matching selected canonicals.
+
+The aggregate page-indexing report was last updated on 22 October and listed 30 indexed and 40 not indexed URLs: 24 redirects, 14 discovered but not indexed, and 2 crawled but not indexed. Its two crawled-but-not-indexed examples are Resources and GTM Lab, yet both individual inspections now say indexed. Treat the older aggregate as lagging; do not file a new indexing fix or validate a fix based on those two examples alone. The GTM Lab still showed a Vercel security checkpoint in an automated Chrome session on 3 November. This does not establish whether ordinary visitors are blocked; investigate with a representative visitor session before changing firewall rules. No code change is justified by this week's evidence.
 
 ## Release ledger
 
 | Date | Change | Search Console evaluation window |
 | --- | --- | --- |
 | 24 Oct 2026 | Prior indexing and Resources work was live; individual crawls confirmed on meeting lesson, Resources, and GTM Lab | Too recent for the baseline period above |
-| Pending review | Competitor-brief improvements in PR #8 | Start after deployment, if approved |
-| Pending review | Sales lesson, course, navigation, and mobile layout package | Start after deployment, if approved |
+| 25 Oct 2026 | Competitor-brief improvements in PR #8 deployed | First complete post-release 28-day period ends 21 Nov 2026 |
+| 25 Oct 2026 | Sales lesson, course, navigation, and mobile layout package in PR #9 deployed | First complete post-release 28-day period ends 21 Nov 2026 |
 
 Do not claim a traffic increase from an index count or a small change in impressions. A useful conclusion needs a dated release, a later complete measurement window, and a comparable prior window.
